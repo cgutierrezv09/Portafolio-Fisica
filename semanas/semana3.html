@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 3 - Porta Física</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- MathJax para fórmulas -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">Porta Fisica</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Semanas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="semana2.html">Semana 2</a></li>
+                            <li><a class="dropdown-item" href="semana3.html">Semana 3</a></li>
+                            <li><a class="dropdown-item" href="semana4.html">Semana 4</a></li>
+                            <li><a class="dropdown-item" href="semana5.html">Semana 5</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Semana 3 -->
+    <section class="container mt-5 mb-5">
+        <h1 class="text-center fw-bold mb-3">Semana 3</h1>
+        <p class="text-center text-muted fs-5">
+            Fuerza Centrípeta y Fuerza de Fricción
+        </p>
+        <hr class="my-4">
+    </section>
+
+    <!-- Tabs para los dos temas -->
+    <section class="container mb-5">
+        <ul class="nav nav-tabs nav-fill mb-4" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active fw-bold" id="fc-tab" data-bs-toggle="tab" data-bs-target="#fc-content" type="button">
+                     Fuerza Centrípeta
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-bold" id="ff-tab" data-bs-toggle="tab" data-bs-target="#ff-content" type="button">
+                     Fuerza de Fricción
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+
+            <!-- TAB 1: FUERZA CENTRÍPETA -->
+            <div class="tab-pane fade show active" id="fc-content" role="tabpanel">
+
+                <!-- 1. CONCEPTO -->
+                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold"> Concepto</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            La <strong>fuerza centrípeta</strong> no es una fuerza nueva. Es la <strong>fuerza neta resultante</strong> 
+                            que apunta hacia el centro de una trayectoria circular y es responsable de cambiar la dirección del movimiento.
+                        </p>
+                        <p>
+                            En el movimiento circular uniforme (MCU), un objeto se mueve con rapidez constante pero su dirección cambia continuamente. 
+                            Para lograr esto, <strong>debe existir una aceleración apuntando hacia el centro</strong>, lo que requiere una fuerza neta en esa dirección.
+                        </p>
+                        <p>
+                            Esta fuerza puede ser proporcionada por:
+                        </p>
+                        <ul>
+                            <li><strong>Tensión</strong> (cuerda tirando de una bola)</li>
+                            <li><strong>Peso</strong> (satélite orbitando)</li>
+                            <li><strong>Normal</strong> (auto en curva)</li>
+                            <li><strong>Fricción</strong> (neumático en curva mojada)</li>
+                            <li>Combinación de fuerzas</li>
+                        </ul>
+                        <p class="text-muted mb-0">
+                            <strong>Punto clave:</strong> No está "hacia afuera" (fuerza centrífuga es ficticia, solo en marcos no inerciales).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. FÓRMULAS CLAVE -->
+                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold"> Fórmulas Clave</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="fw-bold">Fuerza centrípeta (magnitud):</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$F_c = \frac{mv^2}{r} = m\omega^2 r$$
+                        </div>
+                        <small class="d-block text-muted mb-3">
+                            donde m = masa, v = rapidez tangencial, r = radio, ω = velocidad angular
+                        </small>
+
+                        <p class="fw-bold">Aceleración centrípeta:</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$a_c = \frac{v^2}{r} = \omega^2 r$$
+                        </div>
+
+                        <p class="fw-bold">Segunda ley de Newton (radial):</p>
+                        <div class="bg-light p-3 rounded">
+                            $$\sum F_{\text{hacia centro}} = ma_c = \frac{mv^2}{r}$$
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. DIAGRAMA -->
+                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold"> Diagrama de Fuerzas</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <div style="background: #f0f4f8; padding: 2rem; border-radius: 8px;">
+                            <svg width="400" height="300" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Círculo de trayectoria -->
+                                <circle cx="200" cy="150" r="80" fill="none" stroke="#3498db" stroke-width="2" stroke-dasharray="5,5"/>
+                                
+                                <!-- Centro -->
+                                <circle cx="200" cy="150" r="3" fill="#2c3e50"/>
+                                
+                                <!-- Objeto (bola) -->
+                                <circle cx="280" cy="150" r="10" fill="#e74c3c"/>
+                                
+                                <!-- Radio -->
+                                <line x1="200" y1="150" x2="280" y2="150" stroke="#2c3e50" stroke-width="1.5"/>
+                                <text x="235" y="140" font-size="13" font-weight="bold" fill="#2c3e50">r</text>
+                                
+                                <!-- Velocidad tangencial (hacia arriba) -->
+                                <line x1="280" y1="150" x2="280" y2="60" stroke="#27ae60" stroke-width="3" marker-end="url(#arrowgreen3)"/>
+                                <text x="295" y="100" font-size="14" font-weight="bold" fill="#27ae60">v</text>
+                                
+                                <!-- Fuerza centrípeta (hacia el centro) -->
+                                <line x1="280" y1="150" x2="220" y2="150" stroke="#e67e22" stroke-width="3" marker-end="url(#arroworange2)"/>
+                                <text x="235" y="165" font-size="14" font-weight="bold" fill="#e67e22">F<tspan baseline-shift="sub">c</tspan></text>
+                                
+                                <!-- Línea punteada que muestra la trayectoria -->
+                                <path d="M 280 150 Q 310 100 280 50 Q 250 100 280 150" fill="none" stroke="#95a5a6" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+                                
+                                <!-- Marcadores de SVG -->
+                                <defs>
+                                    <marker id="arrowgreen3" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                        <polygon points="0,0 10,5 0,10" fill="#27ae60"/>
+                                    </marker>
+                                    <marker id="arroworange2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                        <polygon points="0,0 10,5 0,10" fill="#e67e22"/>
+                                    </marker>
+                                </defs>
+                            </svg>
+                        </div>
+                        <p class="text-muted mt-3 mb-0">
+                            La <strong>velocidad v</strong> es siempre tangente al círculo. 
+                            La <strong>fuerza centrípeta F<sub>c</sub></strong> siempre apunta hacia el centro y causa la aceleración centrípeta.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. EJERCICIO RESUELTO -->
+                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold"> Ejercicio Resuelto</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="fw-bold">Problema:</p>
+                        <p>
+                            Un auto de 1200 kg entra en una curva circular de radio 50 m a una velocidad de 15 m/s. 
+                            Calcula: a) la fuerza centrípeta requerida, b) la aceleración centrípeta.
+                        </p>
+
+                        <p class="fw-bold mt-3">a) Fuerza centrípeta</p>
+                        <div class="bg-light p-2 rounded mb-2">
+                            $$F_c = \frac{mv^2}{r} = \frac{1200 \times (15)^2}{50} = \frac{1200 \times 225}{50} = \frac{270000}{50} = 5400 \text{ N}$$
+                        </div>
+                        <p class="text-muted">
+                            <strong>Respuesta:</strong> Se necesitan <strong>5400 N</strong> de fuerza centrípeta (proporcionada por la fricción del neumático con la carretera).
+                        </p>
+
+                        <p class="fw-bold mt-3">b) Aceleración centrípeta</p>
+                        <div class="bg-light p-2 rounded">
+                            $$a_c = \frac{v^2}{r} = \frac{(15)^2}{50} = \frac{225}{50} = 4.5 \text{ m/s}^2$$
+                        </div>
+                        <p class="text-muted">
+                            <strong>Respuesta:</strong> La aceleración es <strong>4.5 m/s²</strong> hacia el centro de la curva.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5. APLICACIÓN EN INGENIERÍA -->
+                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold"> Conexión con Ingeniería de Software</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            <strong>Videojuegos:</strong> Los motores de física calculan fuerzas centrípetas para simular que 
+                            personajes o autos giren realista en curvas sin derraparse.
+                        </p>
+                        <p>
+                            <strong>Simulaciones de vuelo:</strong> Los simuladores de drones y aviones deben calcular la fuerza 
+                            centripeta en giros para mantener la estabilidad.
+                        </p>
+                        <p class="text-muted mb-0">
+                            <strong>Diseño de circuitos:</strong> En juegos de carreras (F1, Mario Kart), la fricción máxima 
+                            determina la velocidad segura en las curvas.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TAB 2: FUERZA DE FRICCIÓN -->
+            <div class="tab-pane fade" id="ff-content" role="tabpanel">
+
+                <!-- 1. CONCEPTO -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold"> Concepto</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            La <strong>fricción</strong> es una fuerza de contacto que se opone al movimiento (o al intento de movimiento) 
+                            entre dos superficies en contacto.
+                        </p>
+                        <p>
+                            Hay dos tipos principales:
+                        </p>
+                        <ul>
+                            <li><strong>Fricción estática (f<sub>s</sub>)</strong> — actúa cuando el objeto está en reposo, impide que comience a moverse</li>
+                            <li><strong>Fricción cinética (f<sub>k</sub>)</strong> — actúa cuando el objeto ya está en movimiento, se opone al movimiento</li>
+                        </ul>
+                        <p>
+                            La fricción depende de:
+                        </p>
+                        <ul>
+                            <li><strong>Coeficiente de fricción (μ)</strong> — propiedad de los materiales (adimensional, 0 a 1 típicamente)</li>
+                            <li><strong>Fuerza normal (N)</strong> — fuerza perpendicular a la superficie de contacto</li>
+                        </ul>
+                        <p class="text-muted mb-0">
+                            <strong>Nota:</strong> La fricción NO depende del área de contacto (sorprende a muchos).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. FÓRMULAS CLAVE -->
+                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold"> Fórmulas Clave</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="fw-bold">Fricción cinética (objeto en movimiento):</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$f_k = \mu_k N$$
+                        </div>
+                        <small class="d-block text-muted mb-3">
+                            μ<sub>k</sub> = coeficiente de fricción cinética, N = fuerza normal
+                        </small>
+
+                        <p class="fw-bold">Fricción estática máxima (justo antes de moverse):</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$f_{s,\text{max}} = \mu_s N$$
+                        </div>
+                        <small class="d-block text-muted mb-3">
+                            μ<sub>s</sub> = coeficiente de fricción estática (típicamente μ<sub>s</sub> > μ<sub>k</sub>)
+                        </small>
+
+                        <p class="fw-bold">Fricción estática en general (mientras está en reposo):</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$f_s \leq \mu_s N$$
+                        </div>
+
+                        <p class="fw-bold">En una superficie horizontal plana:</p>
+                        <div class="bg-light p-3 rounded">
+                            $$N = mg$$
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. DIAGRAMA -->
+                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold"> Diagrama de Cuerpo Libre</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <div style="background: #f0f4f8; padding: 2rem; border-radius: 8px;">
+                            <svg width="400" height="320" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Superficie -->
+                                <line x1="50" y1="250" x2="350" y2="250" stroke="#34495e" stroke-width="3"/>
+                                <line x1="50" y1="250" x2="55" y2="260" stroke="#34495e" stroke-width="1"/>
+                                <line x1="70" y1="250" x2="75" y2="260" stroke="#34495e" stroke-width="1"/>
+                                <line x1="90" y1="250" x2="95" y2="260" stroke="#34495e" stroke-width="1"/>
+                                <line x1="110" y1="250" x2="115" y2="260" stroke="#34495e" stroke-width="1"/>
+                                <line x1="130" y1="250" x2="135" y2="260" stroke="#34495e" stroke-width="1"/>
+                                <line x1="150" y1="250" x2="155" y2="260" stroke="#34495e" stroke-width="1"/>
+                                <line x1="170" y1="250" x2="175" y2="260" stroke="#34495e" stroke-width="1"/>
+                                <line x1="190" y1="250" x2="195" y2="260" stroke="#34495e" stroke-width="1"/>
+                                <line x1="210" y1="250" x2="215" y2="260" stroke="#34495e" stroke-width="1"/>
+                                <line x1="230" y1="250" x2="235" y2="260" stroke="#34495e" stroke-width="1"/>
+                                <line x1="250" y1="250" x2="255" y2="260" stroke="#34495e" stroke-width="1"/>
+                                <line x1="270" y1="250" x2="275" y2="260" stroke="#34495e" stroke-width="1"/>
+                                <line x1="290" y1="250" x2="295" y2="260" stroke="#34495e" stroke-width="1"/>
+                                <line x1="310" y1="250" x2="315" y2="260" stroke="#34495e" stroke-width="1"/>
+                                <line x1="330" y1="250" x2="335" y2="260" stroke="#34495e" stroke-width="1"/>
+                                
+                                <!-- Bloque -->
+                                <rect x="160" y="190" width="80" height="60" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+                                <text x="200" y="225" text-anchor="middle" font-size="14" font-weight="bold" fill="white">m</text>
+                                
+                                <!-- Fuerza aplicada (hacia la derecha) -->
+                                <line x1="240" y1="220" x2="320" y2="220" stroke="#3498db" stroke-width="3" marker-end="url(#arrowblue3)"/>
+                                <text x="295" y="205" font-size="14" font-weight="bold" fill="#3498db">F</text>
+                                
+                                <!-- Peso (hacia abajo) -->
+                                <line x1="200" y1="250" x2="200" y2="290" stroke="#9b59b6" stroke-width="3" marker-end="url(#arrowpurple)"/>
+                                <text x="215" y="270" font-size="14" font-weight="bold" fill="#9b59b6">mg</text>
+                                
+                                <!-- Normal (hacia arriba) -->
+                                <line x1="200" y1="190" x2="200" y2="150" stroke="#27ae60" stroke-width="3" marker-end="url(#arrowgreen4)"/>
+                                <text x="215" y="165" font-size="14" font-weight="bold" fill="#27ae60">N</text>
+                                
+                                <!-- Fricción (hacia la izquierda) -->
+                                <line x1="160" y1="220" x2="80" y2="220" stroke="#e67e22" stroke-width="3" marker-end="url(#arroworange3)"/>
+                                <text x="100" y="205" font-size="14" font-weight="bold" fill="#e67e22">f</text>
+                                
+                                <!-- Marcadores de SVG -->
+                                <defs>
+                                    <marker id="arrowblue3" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                        <polygon points="0,0 10,5 0,10" fill="#3498db"/>
+                                    </marker>
+                                    <marker id="arrowpurple" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                        <polygon points="0,0 10,5 0,10" fill="#9b59b6"/>
+                                    </marker>
+                                    <marker id="arrowgreen4" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                        <polygon points="0,0 10,5 0,10" fill="#27ae60"/>
+                                    </marker>
+                                    <marker id="arroworange3" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                        <polygon points="0,0 10,5 0,10" fill="#e67e22"/>
+                                    </marker>
+                                </defs>
+                            </svg>
+                        </div>
+                        <p class="text-muted mt-3 mb-0">
+                            <strong>N</strong> es la fuerza normal (perpendicular a la superficie), 
+                            <strong>f</strong> es la fricción (paralela a la superficie, opuesta al movimiento).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. EJERCICIO RESUELTO -->
+                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold"> Ejercicio Resuelto</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="fw-bold">Problema:</p>
+                        <p>
+                            Un bloque de 10 kg está sobre una superficie horizontal. El coeficiente de fricción estática es μ<sub>s</sub> = 0.5 
+                            y el coeficiente de fricción cinética es μ<sub>k</sub> = 0.3. 
+                            Calcula: a) la fuerza normal, b) la fricción estática máxima, c) la fricción cinética si el bloque se mueve.
+                        </p>
+
+                        <p class="fw-bold mt-3">a) Fuerza normal (en superficie horizontal):</p>
+                        <div class="bg-light p-2 rounded mb-2">
+                            $$N = mg = 10 \times 9.8 = 98 \text{ N}$$
+                        </div>
+
+                        <p class="fw-bold mt-3">b) Fricción estática máxima:</p>
+                        <div class="bg-light p-2 rounded mb-2">
+                            $$f_{s,\text{max}} = \mu_s N = 0.5 \times 98 = 49 \text{ N}$$
+                        </div>
+                        <p class="text-muted">
+                            <strong>Interpretación:</strong> Se necesita una fuerza mayor a 49 N para empezar a mover el bloque.
+                        </p>
+
+                        <p class="fw-bold mt-3">c) Fricción cinética (si el bloque ya se está moviendo):</p>
+                        <div class="bg-light p-2 rounded">
+                            $$f_k = \mu_k N = 0.3 \times 98 = 29.4 \text{ N}$$
+                        </div>
+                        <p class="text-muted">
+                            <strong>Interpretación:</strong> Una vez que se mueve, la fricción es menor (29.4 N) que la estática máxima (49 N).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5. APLICACIÓN EN INGENIERÍA -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold"> Conexión con Ingeniería de Software</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            <strong>Videojuegos:</strong> Los personajes necesitan fricción para no patinar sobre el piso. 
+                            El motor de física ajusta la aceleración según el coeficiente de fricción.
+                        </p>
+                        <p>
+                            <strong>Simuladores de conducción:</strong> La fricción determina cuánto grip tiene el auto en las curvas, 
+                            si puede derrapar, etc.
+                        </p>
+                        <p class="text-muted mb-0">
+                            <strong>Robótica:</strong> Los robots móviles deben calcular si tienen suficiente fricción para subir una rampa 
+                            sin resbalarse.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-3 mt-5">
+        <div class="container text-center">
+            <p class="mb-1"><strong>Cristopher Gutierrez Vega</strong></p>
+            <p class="mb-1 small">Universidad CENFOTEC | Ingeniería de Software</p>
+            <p class="text-muted small">Portafolio de Física - 2026</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Porta Fisica</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="css/styles.css" />
+</head>
+
+<body>
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Porta Fisica</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">Inicio</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Semanas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="semanas/semana2.html">Semana 2</a></li>
+                            <li><a class="dropdown-item" href="semanas/semana3.html">Semana 3</a></li>
+                            <li><a class="dropdown-item" href="semanas/semana4.html">Semana 4</a></li>
+                            <li><a class="dropdown-item" href="semanas/semana5.html">Semana 5</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!--Section con una pequeña introduccion del portafolio -->
+    <section>
+        <div class="container mt-5">
+
+               <h1 class="text-center">Portafolio de Física</h1>
+        <h3 class="text-center my-4">Hecho por Cristopher Gutierrez Vega</h3>
+        <p class="text-center text-muted">
+            Este portafolio reúne los temas estudiados a lo largo del curso de
+            Física, abarcando desde el movimiento en tres dimensiones y las fuerzas
+            que actúan sobre los cuerpos, hasta conceptos fundamentales como la
+            energía, el trabajo, el impulso y las colisiones. Cada sección presenta
+            los principios teóricos, fórmulas clave y ejercicios resueltos paso a
+            paso, con el objetivo de construir una comprensión sólida y aplicable.
+            Como estudiante de Ingeniería de Software, este espacio también busca
+            conectar la física clásica con su relevancia en el desarrollo de
+            simulaciones, videojuegos y sistemas computacionales.
+        </p>
+        </div>
+     
+    </section>
+
+    <!--div con un carrousel con los temas -->
+
+    <section>
+        <div class="container my-4">
+            <h2 class="text-center">Temas</h2>
+        </div>
+
+        <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4500">
+            <!-- Indicadores de posición (bullets) -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+                <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3"></button>
+            </div>
+
+            <div class="carousel-inner">
+                <!-- Slide 1 — active es obligatorio en el primero -->
+                <div class="carousel-item active">
+                    <div class="vv-hero-slide vv-slide-1">
+                        <div class="vv-hero-overlay"></div>
+                        <div class="carousel-caption d-flex flex-column justify-content-center vv-caption">
+                            <span class="badge bg-primary text-dark mb-3 align-self-center px-3 py-2 fs-6">Semana
+                                2</span>
+                            <h1 class="display-4 fw-bold text-white">
+                                MCU y Movimiento en 3 dimensiones
+                            </h1>
+                            <p class="lead text-white">
+                                Aca podras encontrar una mejor explicacion y observar como se
+                                resuelve e utiliza
+                            </p>
+
+                            <div class="d-flex gap-3 justify-content-center mt-3">
+                                <a href="semanas/semana2.html" class="btn btn-primary btn-lg fw-bold">Ver mas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 2 -->
+                <div class="carousel-item">
+                    <div class="vv-hero-slide vv-slide-2">
+                        <div class="vv-hero-overlay"></div>
+                        <div class="carousel-caption d-flex flex-column justify-content-center vv-caption">
+                            <span class="badge bg-primary text-dark mb-3 align-self-center px-3 py-2 fs-6">Semana
+                                3</span>
+                            <h1 class="display-4 fw-bold text-white">
+                                Fuerzas centripeda y de friccion
+                            </h1>
+                            <p class="lead text-white">
+                                Aca podras encontrar una mejor explicacion y observar como se
+                                resuelve e utiliza
+                            </p>
+
+                            <div class="d-flex gap-3 justify-content-center mt-2">
+                                <a href="semanas/semana3.html" class="btn btn-primary btn-lg fw-bold">Ver mas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Slide 3 -->
+                <div class="carousel-item">
+                    <div class="vv-hero-slide vv-slide-3">
+                        <div class="vv-hero-overlay"></div>
+                        <div class="carousel-caption d-flex flex-column justify-content-center vv-caption">
+                            <span class="badge bg-primary text-dark mb-3 align-self-center px-3 py-2 fs-6">Semana
+                                4</span>
+                            <h1 class="display-4 fw-bold text-white">Trabajo y energia</h1>
+                            <p class="lead text-white">
+                                Aca podras encontrar una mejor explicacion y observar como se
+                                resuelve e utiliza
+                            </p>
+                            <div class="d-flex gap-3 justify-content-center mt-2">
+                                <a href="semanas/semana4.html" class="btn btn-primary btn-lg fw-bold">Ver mas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="carousel-item">
+                    <div class="vv-hero-slide vv-slide-4">
+                        <div class="vv-hero-overlay"></div>
+                        <div class="carousel-caption d-flex flex-column justify-content-center vv-caption">
+                            <span class="badge bg-primary text-dark mb-3 align-self-center px-3 py-2 fs-6">Semana
+                                5</span>
+                            <h1 class="display-4 fw-bold text-white">
+                                Impulso y colisiones inelasticas
+                            </h1>
+                            <p class="lead text-white">
+                                Aca podras encontrar una mejor explicacion y observar como se
+                                resuelve e utiliza
+                            </p>
+                            <div class="d-flex gap-3 justify-content-center mt-2">
+                                <a href="semanas/semana5.html" class="btn btn-primary btn-lg fw-bold">Ver mas</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Flechas de control -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
+        </div>
+    </section>
+
+    <section>
+        <div class="container my-5">
+            <h2 class="text-center mb-5">¿Qué encontrarás en cada tema?</h2>
+            <div class="row">
+                <div class="col-md-3 text-center mb-4">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/600x400/8DA7BE/F8F7F9?text=Conceptos" class="card-img-top"
+                            alt="...">
+                        <div class="card-body">
+
+                            <p class="card-text">Explicación clara y en tus propias palabras</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/600x400/8DA7BE/F8F7F9?text=Fórmulas" class="card-img-top"
+                            alt="...">
+                        <div class="card-body">
+
+                            <p class="card-text">Ecuaciones con descripción de variables</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/600x400/8DA7BE/F8F7F9?text=Diagrama" class="card-img-top"
+                            alt="...">
+                        <div class="card-body">
+
+                            <p class="card-text">Figuras y visuales para entender mejor</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center mb-4">
+                    <div class="card h-100">
+                        <img src="https://placehold.co/600x400/8DA7BE/F8F7F9?text=Ejercicios" class="card-img-top"
+                            alt="...">
+                        <div class="card-body">
+
+                            <p class="card-text">Problema resuelto paso a paso</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+  <footer class=" text-white py-1">
+  <div class="container text-center">
+    <p class="mb-1"><strong>Cristopher Gutierrez Vega</strong></p>
+    <p class="mb-1 small">Universidad CENFOTEC | Ingeniería de Software</p>
+    <p class="text-muted small">Portafolio de Física - 2026</p>
+  </div>
+</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

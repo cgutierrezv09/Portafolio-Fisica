@@ -1,0 +1,426 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+      background-color: #f0f4f8;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+      color: white !important;
+    background-color: #8DA7BE !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.navbar-nav .nav-link {
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #64b5f6 !important;
+    transform: translateY(-3px);
+}
+
+.dropdown-menu {
+    background-color: #8DA7BE;
+    border: none;
+    box-shadow: 0 4px 12px rgba(87, 142, 243, 0.15);
+}
+
+.dropdown-item {
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #1a2f45;
+    color: #64b5f6;
+}
+
+/* ============================================
+   SECCIONES
+   ============================================ */
+section {
+    padding: 2rem 0;
+}
+
+section:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+section:nth-child(even) {
+    background-color: #f8f9fa;
+}
+
+section h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+section h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #0D1B2A;
+    position: relative;
+    padding-bottom: 1rem;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(to right, #0D1B2A, #64b5f6);
+    margin: 0.75rem auto 0;
+    border-radius: 2px;
+}
+
+/* ============================================
+   CARRUSEL
+   ============================================ */
+.vv-hero-slide {
+    height: 88vh;
+    min-height: 520px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vv-slide-1 {
+    background-image: url('https://sos-orbital-mechanics.com/wp-content/uploads/2021/12/LEO-to-GSO-scaled.jpg');
+}
+
+.vv-slide-2 {
+    background-image: url('https://i.blogs.es/juegos/9617/mario_kart_wii_u/fotos/maestras/mario_kart_wii_u-2542418.jpg');
+}
+
+.vv-slide-3 {
+    background-image: url('https://i.ytimg.com/vi/Tjg_sF8Rvao/maxresdefault.jpg');
+}
+
+.vv-slide-4 {
+    background-image: url('https://i.ytimg.com/vi/HTy6W1U33Mg/hq720.jpg?sqp=-oaymwEhCK4FEIIDSFryq4qpAxMIARUAAAAAGAElAADIQj0AgKJD&rs=AOn4CLDqHS2BnIcEqH-tT2aWqxEnyPfhlw');
+}
+
+.vv-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(10, 25, 12, 0.45) 0%,
+        rgba(10, 25, 12, 0.70) 100%
+    );
+    z-index: 1;
+}
+
+.vv-caption {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+}
+
+.vv-caption h1 {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+    font-size: 3rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.vv-caption .lead {
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.3);
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+}
+
+.badge {
+    font-weight: 600;
+    font-size: 0.9rem !important;
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #0D1B2A !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Indicadores del carrusel */
+.carousel-indicators [data-bs-target] {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.6);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.carousel-indicators .active {
+    background-color: white;
+    width: 10px;
+}
+
+.carousel-indicators [data-bs-target]:hover {
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Controles del carrusel */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+/* ============================================
+   CARDS
+   ============================================ */
+.card {
+    border: none;
+    border-radius: 1rem;
+    background: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.card-body {
+    padding: 1.5rem;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.card-title {
+    font-weight: 700;
+    color: #0D1B2A;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.card-text {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+
+/* ============================================
+   FEATURE BOX
+   ============================================ */
+.feature-box {
+    padding: 2rem;
+    border: 2px solid #0D1B2A;
+    border-radius: 12px;
+    background: #ffffff;
+    transition: all 0.3s ease;
+    min-height: 120px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.feature-box h5 {
+    color: #0D1B2A;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.feature-box p {
+    color: #64748b;
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.feature-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    border-color: #64b5f6;
+    background: #f0f7ff;
+}
+
+/* ============================================
+   FOOTER
+   ============================================ */
+footer {
+    background-color: #8DA7BE;
+    color: white;
+   
+    margin-top: 3rem;
+}
+
+footer p {
+    color: inherit;
+    margin: 0;
+}
+
+footer .text-muted {
+    color: rgba(255, 255, 255, 0.7) !important;
+}
+
+footer strong {
+    color: #64b5f6;
+    font-weight: 700;
+}
+
+/* ============================================
+   TIPOGRAFÍA
+   ============================================ */
+h3 {
+    color: #0D1B2A;
+    font-weight: 700;
+}
+
+p {
+    color: #64748b;
+}
+
+.text-muted {
+    color: #64748b !important;
+}
+
+/* ============================================
+   BOTONES
+   ============================================ */
+.btn-primary {
+    background-color: #0D1B2A;
+    border-color: #0D1B2A;
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #1a2f45;
+    border-color: #1a2f45;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-light:hover {
+    background-color: transparent;
+    border-color: white;
+    color: white;
+}
+
+/* ============================================
+   RESPONSIVIDAD
+   ============================================ */
+@media (max-width: 768px) {
+    section h1 {
+        font-size: 1.8rem;
+    }
+
+    section h2 {
+        font-size: 1.5rem;
+    }
+
+    .vv-caption h1 {
+        font-size: 2rem;
+    }
+
+    .vv-caption .lead {
+        font-size: 1rem;
+    }
+
+    .vv-hero-slide {
+        height: 400px;
+    }
+
+    .card {
+        margin-bottom: 1rem;
+    }
+
+    section {
+        padding: 1.5rem 0;
+    }
+}
+
+@media (max-width: 576px) {
+    section h1 {
+        font-size: 1.5rem;
+    }
+
+    section h2 {
+        font-size: 1.3rem;
+    }
+
+    .vv-caption h1 {
+        font-size: 1.5rem;
+    }
+
+    .vv-caption .lead {
+        font-size: 0.9rem;
+    }
+
+    .vv-hero-slide {
+        height: 300px;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.5rem 1rem;
+    }
+
+    .feature-box {
+        padding: 1.5rem;
+    }
+}
+
+/* ============================================
+   ACCESIBILIDAD
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+a:focus-visible,
+button:focus-visible,
+.btn:focus-visible {
+    outline: 2px solid #64b5f6;
+    outline-offset: 2px;
+    border-radius: 4px;
+}

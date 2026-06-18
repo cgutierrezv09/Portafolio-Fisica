@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 4 - Porta Física</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- MathJax para fórmulas -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">Porta Fisica</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Semanas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="semana2.html">Semana 2</a></li>
+                            <li><a class="dropdown-item" href="semana3.html">Semana 3</a></li>
+                            <li><a class="dropdown-item" href="semana4.html">Semana 4</a></li>
+                            <li><a class="dropdown-item" href="semana5.html">Semana 5</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Semana 4 -->
+    <section class="container mt-5 mb-5">
+        <h1 class="text-center fw-bold mb-3">Semana 4</h1>
+        <p class="text-center text-muted fs-5">
+            Trabajo y Conservación de la Energía
+        </p>
+        <hr class="my-4">
+    </section>
+
+    <!-- Tabs para los dos temas -->
+    <section class="container mb-5">
+        <ul class="nav nav-tabs nav-fill mb-4" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active fw-bold" id="trabajo-tab" data-bs-toggle="tab" data-bs-target="#trabajo-content" type="button">
+                    Trabajo
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-bold" id="energia-tab" data-bs-toggle="tab" data-bs-target="#energia-content" type="button">
+                    Conservación de la Energía
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+
+            <!-- TAB 1: TRABAJO -->
+            <div class="tab-pane fade show active" id="trabajo-content" role="tabpanel">
+
+                <!-- 1. CONCEPTO -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Concepto</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            El <strong>trabajo</strong> en física es la cantidad de energía transferida cuando una fuerza actúa sobre un objeto 
+                            y lo desplaza en la dirección de esa fuerza.
+                        </p>
+                        <p>
+                            <strong>Punto importante:</strong> El trabajo NO es solo aplicar una fuerza. Debe haber desplazamiento en la dirección 
+                            (o componente) de la fuerza. Si empujas una pared y no se mueve, técnicamente haces cero trabajo en ella.
+                        </p>
+                        <p>
+                            El trabajo puede ser:
+                        </p>
+                        <ul>
+                            <li><strong>Positivo:</strong> cuando la fuerza ayuda al desplazamiento (ej: bajar un objeto)</li>
+                            <li><strong>Negativo:</strong> cuando la fuerza se opone al desplazamiento (ej: fricción)</li>
+                            <li><strong>Cero:</strong> cuando la fuerza es perpendicular al desplazamiento (ej: cargar un libro horizontalmente)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- 2. FÓRMULAS CLAVE -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Fórmulas Clave</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="fw-bold">Trabajo con ángulo entre fuerza y desplazamiento:</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$W = F \cdot d \cdot \cos(\theta)$$
+                        </div>
+                        <small class="d-block text-muted mb-3">
+                            donde F = magnitud de la fuerza, d = desplazamiento, θ = ángulo entre F y d
+                        </small>
+
+                        <p class="fw-bold">Cuando la fuerza es paralela al desplazamiento (θ = 0°):</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$W = F \cdot d$$
+                        </div>
+
+                        <p class="fw-bold">Cuando la fuerza es perpendicular (θ = 90°):</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$W = 0$$
+                        </div>
+
+                        <p class="fw-bold">Potencia (trabajo por unidad de tiempo):</p>
+                        <div class="bg-light p-3 rounded">
+                            $$P = \frac{W}{t} \text{ (en watts, W)}$$
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. DIAGRAMA -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Diagrama de Trabajo</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <div style="background: #f0f4f8; padding: 2rem; border-radius: 8px;">
+                            <svg width="450" height="250" viewBox="0 0 450 250" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Piso -->
+                                <line x1="30" y1="180" x2="420" y2="180" stroke="#34495e" stroke-width="3"/>
+                                <line x1="30" y1="180" x2="35" y2="190" stroke="#34495e" stroke-width="1"/>
+                                <line x1="60" y1="180" x2="65" y2="190" stroke="#34495e" stroke-width="1"/>
+                                <line x1="90" y1="180" x2="95" y2="190" stroke="#34495e" stroke-width="1"/>
+                                <line x1="120" y1="180" x2="125" y2="190" stroke="#34495e" stroke-width="1"/>
+                                <line x1="150" y1="180" x2="155" y2="190" stroke="#34495e" stroke-width="1"/>
+                                <line x1="180" y1="180" x2="185" y2="190" stroke="#34495e" stroke-width="1"/>
+                                <line x1="210" y1="180" x2="215" y2="190" stroke="#34495e" stroke-width="1"/>
+                                <line x1="240" y1="180" x2="245" y2="190" stroke="#34495e" stroke-width="1"/>
+                                <line x1="270" y1="180" x2="275" y2="190" stroke="#34495e" stroke-width="1"/>
+                                <line x1="300" y1="180" x2="305" y2="190" stroke="#34495e" stroke-width="1"/>
+                                <line x1="330" y1="180" x2="335" y2="190" stroke="#34495e" stroke-width="1"/>
+                                <line x1="360" y1="180" x2="365" y2="190" stroke="#34495e" stroke-width="1"/>
+                                <line x1="390" y1="180" x2="395" y2="190" stroke="#34495e" stroke-width="1"/>
+                                
+                                <!-- Bloque -->
+                                <rect x="120" y="130" width="70" height="50" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+                                <text x="155" y="160" text-anchor="middle" font-size="14" font-weight="bold" fill="white">m</text>
+                                
+                                <!-- Fuerza aplicada -->
+                                <line x1="190" y1="155" x2="280" y2="155" stroke="#3498db" stroke-width="3" marker-end="url(#arrowblue4)"/>
+                                <text x="230" y="135" font-size="14" font-weight="bold" fill="#3498db">F</text>
+                                
+                                <!-- Desplazamiento -->
+                                <path d="M 120 210 L 280 210" fill="none" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,5"/>
+                                <line x1="280" y1="210" x2="270" y2="205" stroke="#27ae60" stroke-width="2"/>
+                                <line x1="280" y1="210" x2="270" y2="215" stroke="#27ae60" stroke-width="2"/>
+                                <text x="195" y="235" font-size="14" font-weight="bold" fill="#27ae60">d</text>
+                                
+                                <!-- Ángulo entre F y d (mostrado con línea punteada) -->
+                                <path d="M 155 155 L 155 180" fill="none" stroke="#9b59b6" stroke-width="1" stroke-dasharray="3,3"/>
+                                <text x="140" y="175" font-size="12" fill="#9b59b6">θ</text>
+                                
+                                <!-- Marcadores de SVG -->
+                                <defs>
+                                    <marker id="arrowblue4" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                        <polygon points="0,0 10,5 0,10" fill="#3498db"/>
+                                    </marker>
+                                </defs>
+                            </svg>
+                        </div>
+                        <p class="text-muted mt-3 mb-0">
+                            El trabajo depende de la componente de la fuerza <strong>en la dirección del desplazamiento</strong> (por eso el coseno del ángulo).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. EJERCICIO RESUELTO -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Ejercicio Resuelto</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="fw-bold">Problema:</p>
+                        <p>
+                            Una caja es arrastrada 8 metros sobre el piso con una fuerza de 50 N aplicada a un ángulo de 30° respecto a la horizontal. 
+                            Calcula el trabajo realizado.
+                        </p>
+
+                        <p class="fw-bold mt-3">Solución:</p>
+                        <div class="bg-light p-2 rounded mb-2">
+                            $$W = F \cdot d \cdot \cos(\theta)$$
+                            $$W = 50 \times 8 \times \cos(30°)$$
+                            $$W = 50 \times 8 \times 0.866$$
+                            $$W = 346.4 \text{ J}$$
+                        </div>
+                        <p class="text-muted">
+                            <strong>Respuesta:</strong> El trabajo realizado es <strong>346.4 J (joules)</strong>. 
+                            Si la fuerza fuera horizontal (θ = 0°), sería 400 J. El ángulo reduce el trabajo efectivo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5. APLICACIÓN EN INGENIERÍA -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Conexión con Ingeniería de Software</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            <strong>Videojuegos:</strong> El motor de física calcula el trabajo para determinar cuánta energía gasta un personaje 
+                            al mover un objeto o saltar. Esto afecta la fatiga o la batería de un robot.
+                        </p>
+                        <p>
+                            <strong>Simulaciones de robótica:</strong> Los robots deben optimizar el trabajo (energía) para completar tareas 
+                            eficientemente.
+                        </p>
+                        <p class="text-muted mb-0">
+                            <strong>Juegos de carreras:</strong> El trabajo realizado por el motor se traduce en aceleración y velocidad.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TAB 2: CONSERVACIÓN DE LA ENERGÍA -->
+            <div class="tab-pane fade" id="energia-content" role="tabpanel">
+
+                <!-- 1. CONCEPTO -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Concepto</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            La <strong>Ley de Conservación de la Energía</strong> establece que la energía no se crea ni se destruye, 
+                            solo se transforma de una forma a otra. La <strong>energía total del sistema permanece constante</strong>.
+                        </p>
+                        <p>
+                            En mecánica, consideramos dos tipos principales de energía:
+                        </p>
+                        <ul>
+                            <li><strong>Energía cinética (K):</strong> energía debido al movimiento (velocidad)</li>
+                            <li><strong>Energía potencial gravitacional (U):</strong> energía debido a la posición (altura)</li>
+                        </ul>
+                        <p class="fw-bold">
+                            Si no hay fricción u otras fuerzas disipativas: <strong>E_total = K + U = constante</strong>
+                        </p>
+                        <p class="text-muted mb-0">
+                            <strong>Ejemplo:</strong> Una bola que cae: pierde energía potencial pero gana energía cinética. 
+                            La suma de ambas se mantiene igual.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. FÓRMULAS CLAVE -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Fórmulas Clave</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="fw-bold">Energía cinética:</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$K = \frac{1}{2}mv^2$$
+                        </div>
+                        <small class="d-block text-muted mb-3">
+                            donde m = masa, v = velocidad
+                        </small>
+
+                        <p class="fw-bold">Energía potencial gravitacional:</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$U = mgh$$
+                        </div>
+                        <small class="d-block text-muted mb-3">
+                            donde m = masa, g = 9.8 m/s², h = altura (respecto a un punto de referencia)
+                        </small>
+
+                        <p class="fw-bold">Energía total (sin fricción):</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$E_{\text{total}} = K + U = \text{constante}$$
+                        </div>
+
+                        <p class="fw-bold">Conservación de energía entre dos estados:</p>
+                        <div class="bg-light p-3 rounded">
+                            $$K_1 + U_1 = K_2 + U_2$$
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. DIAGRAMA -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Diagrama de Energía</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <div style="background: #f0f4f8; padding: 2rem; border-radius: 8px;">
+                            <svg width="400" height="350" viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Suelo -->
+                                <line x1="30" y1="300" x2="370" y2="300" stroke="#34495e" stroke-width="3"/>
+                                
+                                <!-- Posición inicial (arriba) -->
+                                <circle cx="100" cy="100" r="12" fill="#e74c3c"/>
+                                <text x="100" y="105" text-anchor="middle" font-size="12" font-weight="bold" fill="white">m</text>
+                                
+                                <!-- Línea de altura -->
+                                <line x1="130" y1="100" x2="130" y2="300" stroke="#7f8c8d" stroke-width="1" stroke-dasharray="3,3"/>
+                                <text x="140" y="200" font-size="12" fill="#7f8c8d">h</text>
+                                
+                                <!-- Altura máxima (100% U, 0% K) -->
+                                <rect x="160" y="70" width="80" height="30" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+                                <text x="200" y="90" text-anchor="middle" font-size="11" font-weight="bold" fill="white">U = mgh</text>
+                                <rect x="160" y="105" width="80" height="5" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
+                                <text x="200" y="125" text-anchor="middle" font-size="10" fill="#3498db">K = 0</text>
+                                
+                                <!-- Posición media (bajando) -->
+                                <circle cx="200" cy="180" r="12" fill="#e74c3c"/>
+                                
+                                <!-- Energía media -->
+                                <rect x="250" y="150" width="40" height="25" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
+                                <text x="270" y="167" text-anchor="middle" font-size="9" fill="white">U</text>
+                                <rect x="250" y="180" width="40" height="25" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+                                <text x="270" y="197" text-anchor="middle" font-size="9" fill="white">K</text>
+                                
+                                <!-- Posición final (suelo, 0% U, 100% K) -->
+                                <circle cx="100" cy="288" r="12" fill="#e74c3c"/>
+                                
+                                <!-- Energía en el suelo -->
+                                <rect x="160" y="260" width="80" height="5" fill="#2ecc71" stroke="#27ae60" stroke-width="1"/>
+                                <text x="200" y="280" text-anchor="middle" font-size="10" fill="#2ecc71">U = 0</text>
+                                <rect x="160" y="290" width="80" height="30" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+                                <text x="200" y="310" text-anchor="middle" font-size="11" font-weight="bold" fill="white">K = mgh</text>
+                                
+                                <!-- Líneas de movimiento -->
+                                <path d="M 112 88 Q 140 140 188 175" fill="none" stroke="#95a5a6" stroke-width="2" stroke-dasharray="5,5"/>
+                                <path d="M 212 175 Q 240 240 112 276" fill="none" stroke="#95a5a6" stroke-width="2" stroke-dasharray="5,5"/>
+                            </svg>
+                        </div>
+                        <p class="text-muted mt-3 mb-0">
+                            A medida que el objeto cae, pierde altura (disminuye U) pero aumenta velocidad (aumenta K). La suma K + U permanece constante.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. EJERCICIO RESUELTO -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Ejercicio Resuelto</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="fw-bold">Problema:</p>
+                        <p>
+                            Una bola de 2 kg se suelta desde una altura de 5 metros (sin fricción). 
+                            Calcula: a) energía potencial inicial, b) velocidad al llegar al suelo, c) energía cinética final.
+                        </p>
+
+                        <p class="fw-bold mt-3">a) Energía potencial inicial (en h = 5 m):</p>
+                        <div class="bg-light p-2 rounded mb-2">
+                            $$U_1 = mgh = 2 \times 9.8 \times 5 = 98 \text{ J}$$
+                            $$K_1 = 0 \text{ (porque v = 0 al inicio)}$$
+                        </div>
+
+                        <p class="fw-bold mt-3">b) Velocidad al llegar al suelo:</p>
+                        <p>Usando conservación de energía:</p>
+                        <div class="bg-light p-2 rounded mb-2">
+                            $$E_1 = E_2$$
+                            $$K_1 + U_1 = K_2 + U_2$$
+                            $$0 + 98 = \frac{1}{2}(2)v^2 + 0$$
+                            $$98 = v^2$$
+                            $$v = \sqrt{98} \approx 9.9 \text{ m/s}$$
+                        </div>
+
+                        <p class="fw-bold mt-3">c) Energía cinética final:</p>
+                        <div class="bg-light p-2 rounded">
+                            $$K_2 = \frac{1}{2}mv^2 = \frac{1}{2}(2)(9.9)^2 = 98 \text{ J}$$
+                        </div>
+                        <p class="text-muted">
+                            <strong>Verificación:</strong> K₂ = 98 J = U₁. La energía potencial inicial se convirtió completamente en cinética.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5. APLICACIÓN EN INGENIERÍA -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Conexión con Ingeniería de Software</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            <strong>Motores de física en videojuegos:</strong> Todos los motores (Unity, Unreal, Godot) usan conservación de energía 
+                            para calcular movimientos realistas sin fricción o con fricción controlada.
+                        </p>
+                        <p>
+                            <strong>Simulaciones:</strong> Sistemas que requieren cálculos eficientes (drones, satélites) 
+                            usan conservación de energía para predecir trayectorias.
+                        </p>
+                        <p class="text-muted mb-0">
+                            <strong>Optimización:</strong> La conservación de energía permite detectar errores en simulaciones 
+                            (si E_total cambia sin motivo, hay un bug).
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-3 mt-5">
+        <div class="container text-center">
+            <p class="mb-1"><strong>Cristopher Gutierrez Vega</strong></p>
+            <p class="mb-1 small">Universidad CENFOTEC | Ingeniería de Software</p>
+            <p class="text-muted small">Portafolio de Física - 2026</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

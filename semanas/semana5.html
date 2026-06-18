@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 5 - Porta Física</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- MathJax para fórmulas -->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">Porta Fisica</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Semanas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="semana2.html">Semana 2</a></li>
+                            <li><a class="dropdown-item" href="semana3.html">Semana 3</a></li>
+                            <li><a class="dropdown-item" href="semana4.html">Semana 4</a></li>
+                            <li><a class="dropdown-item" href="semana5.html">Semana 5</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Semana 5 -->
+    <section class="container mt-5 mb-5">
+        <h1 class="text-center fw-bold mb-3">Semana 5</h1>
+        <p class="text-center text-muted fs-5">
+            Impulso y Colisiones Inelásticas
+        </p>
+        <hr class="my-4">
+    </section>
+
+    <!-- Tabs para los dos temas -->
+    <section class="container mb-5">
+        <ul class="nav nav-tabs nav-fill mb-4" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active fw-bold" id="impulso-tab" data-bs-toggle="tab" data-bs-target="#impulso-content" type="button">
+                    Impulso
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-bold" id="colisiones-tab" data-bs-toggle="tab" data-bs-target="#colisiones-content" type="button">
+                    Colisiones Inelásticas
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+
+            <!-- TAB 1: IMPULSO -->
+            <div class="tab-pane fade show active" id="impulso-content" role="tabpanel">
+
+                <!-- 1. CONCEPTO -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Concepto</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            El <strong>impulso</strong> es el producto de una fuerza por el tiempo que actúa. 
+                            Representa el cambio en el <strong>momento lineal</strong> (o cantidad de movimiento) de un objeto.
+                        </p>
+                        <p>
+                            <strong>Relación fundamental:</strong> Un impulso grande puede lograrse aplicando:
+                        </p>
+                        <ul>
+                            <li>Una fuerza grande durante poco tiempo, O</li>
+                            <li>Una fuerza pequeña durante mucho tiempo</li>
+                        </ul>
+                        <p>
+                            El <strong>momento lineal</strong> es p = mv (masa por velocidad). El impulso cambia este momento.
+                        </p>
+                        <p class="text-muted mb-0">
+                            <strong>Ejemplo de propulsión a chorro:</strong> Un cohete expulsa gases (cambio de momento negativo para los gases) 
+                            lo que le da momento positivo hacia arriba (tercera ley de Newton).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. FÓRMULAS CLAVE -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Fórmulas Clave</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="fw-bold">Impulso:</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$J = F \cdot \Delta t$$
+                        </div>
+                        <small class="d-block text-muted mb-3">
+                            donde F = fuerza constante, Δt = intervalo de tiempo (en N·s o kg·m/s)
+                        </small>
+
+                        <p class="fw-bold">Momento lineal (cantidad de movimiento):</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$p = mv$$
+                        </div>
+                        <small class="d-block text-muted mb-3">
+                            donde m = masa, v = velocidad
+                        </small>
+
+                        <p class="fw-bold">Teorema impulso-momento:</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$J = \Delta p = m(v_f - v_i)$$
+                            $$F \cdot \Delta t = m \Delta v$$
+                        </div>
+
+                        <p class="fw-bold">Segunda ley de Newton (forma alternativa):</p>
+                        <div class="bg-light p-3 rounded">
+                            $$F = \frac{\Delta p}{\Delta t}$$
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. DIAGRAMA -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Diagrama de Impulso</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <div style="background: #f0f4f8; padding: 2rem; border-radius: 8px;">
+                            <svg width="450" height="280" viewBox="0 0 450 280" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Ejes -->
+                                <line x1="50" y1="200" x2="420" y2="200" stroke="#34495e" stroke-width="2"/>
+                                <line x1="50" y1="30" x2="50" y2="200" stroke="#34495e" stroke-width="2"/>
+                                
+                                <!-- Etiquetas de ejes -->
+                                <text x="410" y="220" font-size="12" font-weight="bold" fill="#34495e">t</text>
+                                <text x="20" y="25" font-size="12" font-weight="bold" fill="#34495e">F</text>
+                                
+                                <!-- Escala -->
+                                <text x="45" y="205" font-size="10" fill="#34495e">0</text>
+                                
+                                <!-- Impulso como gráfica (rectángulo bajo la curva) -->
+                                <rect x="150" y="80" width="120" height="120" fill="#3498db" opacity="0.4" stroke="#3498db" stroke-width="2"/>
+                                <line x1="150" y1="200" x2="150" y2="80" stroke="#3498db" stroke-width="2" stroke-dasharray="3,3"/>
+                                <line x1="270" y1="200" x2="270" y2="80" stroke="#3498db" stroke-width="2" stroke-dasharray="3,3"/>
+                                <line x1="150" y1="80" x2="270" y2="80" stroke="#3498db" stroke-width="2"/>
+                                
+                                <!-- Etiquetas del rectángulo -->
+                                <text x="210" y="145" text-anchor="middle" font-size="12" font-weight="bold" fill="#2980b9">J = F·Δt</text>
+                                <text x="210" y="220" text-anchor="middle" font-size="11" fill="#34495e">Δt</text>
+                                <text x="35" y="140" text-anchor="middle" font-size="11" fill="#34495e">F</text>
+                                
+                                <!-- Objeto inicial (izquierda) -->
+                                <circle cx="320" cy="120" r="12" fill="#e74c3c"/>
+                                <text x="320" y="125" text-anchor="middle" font-size="11" fill="white">m</text>
+                                <line x1="332" y1="120" x2="370" y2="120" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowred5)"/>
+                                <text x="350" y="105" font-size="11" fill="#e74c3c">v_i</text>
+                                
+                                <!-- Objeto final (derecha) -->
+                                <circle cx="380" cy="100" r="12" fill="#27ae60"/>
+                                <text x="380" y="105" text-anchor="middle" font-size="11" fill="white">m</text>
+                                <line x1="392" y1="100" x2="410" y2="100" stroke="#27ae60" stroke-width="2.5" marker-end="url(#arrowgreen5)"/>
+                                <text x="400" y="85" font-size="11" fill="#27ae60">v_f</text>
+                                
+                                <!-- Marcadores de SVG -->
+                                <defs>
+                                    <marker id="arrowred5" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                        <polygon points="0,0 10,5 0,10" fill="#e74c3c"/>
+                                    </marker>
+                                    <marker id="arrowgreen5" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                        <polygon points="0,0 10,5 0,10" fill="#27ae60"/>
+                                    </marker>
+                                </defs>
+                            </svg>
+                        </div>
+                        <p class="text-muted mt-3 mb-0">
+                            El área bajo la curva de fuerza vs tiempo es el impulso J. Este impulso aumenta la velocidad de v_i a v_f.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. EJERCICIO RESUELTO -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Ejercicio Resuelto</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="fw-bold">Problema:</p>
+                        <p>
+                            Un balón de 0.5 kg en reposo es pateado con una fuerza de 100 N durante 0.2 segundos. 
+                            Calcula: a) el impulso, b) el cambio de velocidad, c) la velocidad final.
+                        </p>
+
+                        <p class="fw-bold mt-3">a) Impulso:</p>
+                        <div class="bg-light p-2 rounded mb-2">
+                            $$J = F \cdot \Delta t = 100 \times 0.2 = 20 \text{ N·s}$$
+                        </div>
+
+                        <p class="fw-bold mt-3">b) Cambio de velocidad:</p>
+                        <div class="bg-light p-2 rounded mb-2">
+                            $$J = m \Delta v$$
+                            $$20 = 0.5 \times \Delta v$$
+                            $$\Delta v = \frac{20}{0.5} = 40 \text{ m/s}$$
+                        </div>
+
+                        <p class="fw-bold mt-3">c) Velocidad final:</p>
+                        <div class="bg-light p-2 rounded">
+                            $$v_f = v_i + \Delta v = 0 + 40 = 40 \text{ m/s}$$
+                        </div>
+                        <p class="text-muted">
+                            <strong>Respuesta:</strong> El balón alcanza una velocidad de <strong>40 m/s</strong> (aproximadamente 144 km/h).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5. APLICACIÓN EN INGENIERÍA -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Conexión con Ingeniería de Software</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            <strong>Propulsión a chorro (Cohetes):</strong> Los motores de cohetes expulsan gases con alto impulso. 
+                            La cantidad de movimiento perdida por los gases se transforma en momento ascendente para el cohete.
+                        </p>
+                        <p>
+                            <strong>Simulaciones de videojuegos:</strong> Los explosiones aplican impulsos a objetos cercanos, 
+                            enviándolos volando.
+                        </p>
+                        <p class="text-muted mb-0">
+                            <strong>Drones y robots:</strong> El cambio de velocidad requiere calcular el impulso necesario 
+                            para acelerar o frenar.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TAB 2: COLISIONES INELÁSTICAS -->
+            <div class="tab-pane fade" id="colisiones-content" role="tabpanel">
+
+                <!-- 1. CONCEPTO -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Concepto</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            Una <strong>colisión inelástica</strong> es aquella en la que dos o más objetos chocan y, 
+                            después de la colisión, se quedan pegados o se mueven juntos.
+                        </p>
+                        <p>
+                            <strong>Características clave:</strong>
+                        </p>
+                        <ul>
+                            <li><strong>Se conserva el momento lineal:</strong> p_antes = p_después</li>
+                            <li><strong>NO se conserva la energía cinética:</strong> parte se convierte en calor, deformación, sonido, etc.</li>
+                            <li><strong>Es el tipo de colisión más común</strong> en la vida real (autos, balas, etc.)</li>
+                        </ul>
+                        <p class="fw-bold">
+                            Caso extremo: colisión perfectamente inelástica (los objetos quedan pegados).
+                        </p>
+                        <p class="text-muted mb-0">
+                            <strong>Ejemplo:</strong> Dos autos chocando frontalmente se quedan pegados (o casi) y se mueven juntos.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. FÓRMULAS CLAVE -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Fórmulas Clave</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="fw-bold">Conservación del momento lineal:</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$p_{\text{antes}} = p_{\text{después}}$$
+                            $$m_1v_1 + m_2v_2 = (m_1 + m_2)v_f$$
+                        </div>
+                        <small class="d-block text-muted mb-3">
+                            En una colisión perfectamente inelástica donde los objetos quedan pegados
+                        </small>
+
+                        <p class="fw-bold">Para dos objetos con velocidades iniciales:</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$v_f = \frac{m_1v_1 + m_2v_2}{m_1 + m_2}$$
+                        </div>
+
+                        <p class="fw-bold">Energía cinética antes (se pierde parte):</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$K_{\text{antes}} = \frac{1}{2}m_1v_1^2 + \frac{1}{2}m_2v_2^2$$
+                        </div>
+
+                        <p class="fw-bold">Energía cinética después:</p>
+                        <div class="bg-light p-3 rounded">
+                            $$K_{\text{después}} = \frac{1}{2}(m_1 + m_2)v_f^2$$
+                        </div>
+                        <small class="d-block text-muted mt-2">
+                            Nota: K_después < K_antes (la diferencia se convierte en otras formas de energía)
+                        </small>
+                    </div>
+                </div>
+
+                <!-- 3. DIAGRAMA -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Diagrama de Colisión</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <div style="background: #f0f4f8; padding: 2rem; border-radius: 8px;">
+                            <svg width="450" height="280" viewBox="0 0 450 280" xmlns="http://www.w3.org/2000/svg">
+                                <!-- ANTES DE LA COLISIÓN -->
+                                <text x="60" y="25" font-size="13" font-weight="bold" fill="#34495e">ANTES</text>
+                                
+                                <!-- Objeto 1 (izquierda, moviéndose derecha) -->
+                                <rect x="20" y="60" width="50" height="40" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
+                                <text x="45" y="85" text-anchor="middle" font-size="12" font-weight="bold" fill="white">m1</text>
+                                <line x1="70" y1="80" x2="110" y2="80" stroke="#e74c3c" stroke-width="2.5" marker-end="url(#arrowred6)"/>
+                                <text x="85" y="70" font-size="11" fill="#e74c3c">v1</text>
+                                
+                                <!-- Objeto 2 (derecha, moviéndose izquierda) -->
+                                <rect x="130" y="60" width="50" height="40" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
+                                <text x="155" y="85" text-anchor="middle" font-size="12" font-weight="bold" fill="white">m2</text>
+                                <line x1="130" y1="80" x2="90" y2="80" stroke="#3498db" stroke-width="2.5" marker-end="url(#arrowblue5)"/>
+                                <text x="110" y="70" font-size="11" fill="#3498db">v2</text>
+                                
+                                <!-- Flechas de colisión -->
+                                <text x="60" y="130" text-anchor="middle" font-size="14" fill="#34495e">→ COLISIÓN ↓</text>
+                                
+                                <!-- DESPUÉS DE LA COLISIÓN -->
+                                <text x="60" y="180" font-size="13" font-weight="bold" fill="#34495e">DESPUÉS</text>
+                                
+                                <!-- Objeto combinado (pegado) -->
+                                <rect x="30" y="210" width="100" height="40" fill="#27ae60" stroke="#229954" stroke-width="2"/>
+                                <text x="80" y="235" text-anchor="middle" font-size="12" font-weight="bold" fill="white">m1+m2</text>
+                                <line x1="130" y1="230" x2="170" y2="230" stroke="#27ae60" stroke-width="2.5" marker-end="url(#arrowgreen6)"/>
+                                <text x="145" y="220" font-size="11" fill="#27ae60">vf</text>
+                                
+                                <!-- Indicador de energía perdida -->
+                                <circle cx="250" cy="120" r="40" fill="none" stroke="#e67e22" stroke-width="2" stroke-dasharray="5,5"/>
+                                <text x="250" y="115" text-anchor="middle" font-size="11" font-weight="bold" fill="#e67e22">ΔK</text>
+                                <text x="250" y="135" text-anchor="middle" font-size="9" fill="#e67e22">(calor,</text>
+                                <text x="250" y="150" text-anchor="middle" font-size="9" fill="#e67e22">deformación)</text>
+                                
+                                <!-- Marcadores de SVG -->
+                                <defs>
+                                    <marker id="arrowred6" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                        <polygon points="0,0 10,5 0,10" fill="#e74c3c"/>
+                                    </marker>
+                                    <marker id="arrowblue5" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                        <polygon points="0,0 10,5 0,10" fill="#3498db"/>
+                                    </marker>
+                                    <marker id="arrowgreen6" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                        <polygon points="0,0 10,5 0,10" fill="#27ae60"/>
+                                    </marker>
+                                </defs>
+                            </svg>
+                        </div>
+                        <p class="text-muted mt-3 mb-0">
+                            El momento se conserva (p_antes = p_después) pero la energía cinética disminuye (ΔK se convierte en otras formas).
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. EJERCICIO RESUELTO -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Ejercicio Resuelto</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="fw-bold">Problema:</p>
+                        <p>
+                            Un auto rojo de 1000 kg viaja a 20 m/s y choca frontalmente con un auto azul de 1500 kg que viaja a 10 m/s 
+                            en dirección opuesta. Después del choque, quedan pegados. 
+                            Calcula: a) velocidad final, b) energía cinética antes y después.
+                        </p>
+
+                        <p class="fw-bold mt-3">a) Velocidad final (aplicar conservación del momento):</p>
+                        <p class="text-muted small">Tomamos dirección positiva hacia la derecha (auto rojo). Auto azul va a -10 m/s.</p>
+                        <div class="bg-light p-2 rounded mb-2">
+                            $$m_1v_1 + m_2v_2 = (m_1 + m_2)v_f$$
+                            $$1000(20) + 1500(-10) = (1000 + 1500)v_f$$
+                            $$20000 - 15000 = 2500v_f$$
+                            $$5000 = 2500v_f$$
+                            $$v_f = 2 \text{ m/s}$$
+                        </div>
+                        <p class="text-muted">
+                            <strong>Respuesta:</strong> Los autos se mueven juntos a <strong>2 m/s</strong> en la dirección del auto rojo.
+                        </p>
+
+                        <p class="fw-bold mt-3">b) Energía cinética antes y después:</p>
+                        <p>Antes:</p>
+                        <div class="bg-light p-2 rounded mb-2">
+                            $$K_{\text{antes}} = \frac{1}{2}(1000)(20)^2 + \frac{1}{2}(1500)(10)^2$$
+                            $$K_{\text{antes}} = 200000 + 75000 = 275000 \text{ J}$$
+                        </div>
+
+                        <p>Después:</p>
+                        <div class="bg-light p-2 rounded mb-2">
+                            $$K_{\text{después}} = \frac{1}{2}(2500)(2)^2 = \frac{1}{2}(2500)(4) = 5000 \text{ J}$$
+                        </div>
+
+                        <p class="fw-bold mt-3">Energía perdida:</p>
+                        <div class="bg-light p-2 rounded">
+                            $$\Delta K = 275000 - 5000 = 270000 \text{ J}$$
+                        </div>
+                        <p class="text-muted">
+                            <strong>Respuesta:</strong> Se pierden <strong>270,000 J</strong> en deformación, calor, sonido, etc. 
+                            Solo el ~1.8% de la energía cinética original permanece en el sistema.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 5. APLICACIÓN EN INGENIERÍA -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Conexión con Ingeniería de Software</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            <strong>Crash tests (pruebas de seguridad):</strong> Los fabricantes de autos usan simulaciones 
+                            para calcular el impacto en colisiones inelásticas. Esto determina el diseño de airbags y estructuras.
+                        </p>
+                        <p>
+                            <strong>Videojuegos:</strong> Los motores de física simulan colisiones inelásticas para que los personajes 
+                            se peguen entre sí o se deformen realísticamente.
+                        </p>
+                        <p class="text-muted mb-0">
+                            <strong>Sistemas de defensa:</strong> Los cálculos de colisiones son críticos para sistemas de protección 
+                            (bolsas de aire, armaduras, cascos).
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-3 mt-5">
+        <div class="container text-center">
+            <p class="mb-1"><strong>Cristopher Gutierrez Vega</strong></p>
+            <p class="mb-1 small">Universidad CENFOTEC | Ingeniería de Software</p>
+            <p class="text-muted small">Portafolio de Física - 2026</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

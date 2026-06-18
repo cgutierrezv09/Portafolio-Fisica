@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Semana 2 - Porta Física</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
+    <link rel="stylesheet" href="../css/styles.css" />
+    <!-- MathJax para fórmulas -->
+ 
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+
+<body>
+
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="../index.html">Porta Fisica</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
+                aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Semanas
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#semana2">Semana 2</a></li>
+                            <li><a class="dropdown-item" href="semana3.html">Semana 3</a></li>
+                            <li><a class="dropdown-item" href="semana4.html">Semana 4</a></li>
+                            <li><a class="dropdown-item" href="semana5.html">Semana 5</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Semana 2 -->
+    <section class="container mt-5 mb-5">
+        <h1 class="text-center fw-bold mb-3">Semana 2</h1>
+        <p class="text-center text-muted fs-5">
+            Movimiento en 3 Dimensiones y Movimiento Circular Uniforme
+        </p>
+        <hr class="my-4">
+    </section>
+
+    <!-- Tabs para los dos temas -->
+    <section class="container mb-5">
+        <ul class="nav nav-tabs nav-fill mb-4" role="tablist">
+            <li class="nav-item" role="presentation">
+                <button class="nav-link active fw-bold" id="mov3d-tab" data-bs-toggle="tab" data-bs-target="#mov3d-content" type="button">
+                     Movimiento en 3D
+                </button>
+            </li>
+            <li class="nav-item" role="presentation">
+                <button class="nav-link fw-bold" id="mcu-tab" data-bs-toggle="tab" data-bs-target="#mcu-content" type="button">
+                     MCU
+                </button>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+
+            <!-- TAB 1: MOVIMIENTO EN 3 DIMENSIONES -->
+            <div class="tab-pane fade show active" id="mov3d-content" role="tabpanel">
+
+                <!-- 1. CONCEPTO -->
+                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Concepto</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            El <strong>movimiento en 3 dimensiones</strong> es el desplazamiento de un objeto a través del espacio, 
+                            considerando cambios en las tres direcciones: eje X (horizontal), eje Y (vertical) y eje Z (profundidad).
+                        </p>
+                        <p>
+                            En lugar de analizar solo posición horizontal y vertical (como en 2D), ahora trabajamos con 
+                            <strong>vectores de posición, velocidad y aceleración</strong> que tienen componentes en los tres ejes.
+                        </p>
+                        <p class="text-muted mb-0">
+                            <strong>Ejemplo real:</strong> Un avión volando hacia el norte, subiendo de altitud y desviándose ligeramente 
+                            al este, se mueve en las tres dimensiones simultáneamente.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. FÓRMULAS CLAVE -->
+                <div class="card my-5  border-4" style="border-color: #000000 !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold"> Fórmulas Clave</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="fw-bold">Vector de posición:</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$\vec{r}(t) = x(t)\hat{i} + y(t)\hat{j} + z(t)\hat{k}$$
+                        </div>
+
+                        <p class="fw-bold">Vector de velocidad (derivada de la posición):</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$\vec{v}(t) = \frac{d\vec{r}}{dt} = v_x\hat{i} + v_y\hat{j} + v_z\hat{k}$$
+                        </div>
+
+                        <p class="fw-bold">Vector de aceleración (derivada de la velocidad):</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$\vec{a}(t) = \frac{d\vec{v}}{dt} = a_x\hat{i} + a_y\hat{j} + a_z\hat{k}$$
+                        </div>
+
+                        <p class="fw-bold">Magnitud de la velocidad:</p>
+                        <div class="bg-light p-3 rounded">
+                            $$|\vec{v}| = \sqrt{v_x^2 + v_y^2 + v_z^2}$$
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. DIAGRAMA -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Sistema de Coordenadas 3D</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <div style="background: #f0f4f8; padding: 2rem; border-radius: 8px;">
+                            <svg width="300" height="300" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Ejes -->
+                                <line x1="150" y1="150" x2="250" y2="150" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowred)"/>
+                                <line x1="150" y1="150" x2="150" y2="50" stroke="#3498db" stroke-width="2" marker-end="url(#arrowblue)"/>
+                                <line x1="150" y1="150" x2="80" y2="220" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowgreen)"/>
+                                
+                                <!-- Etiquetas de ejes -->
+                                <text x="260" y="160" font-size="16" font-weight="bold" fill="#e74c3c">X</text>
+                                <text x="140" y="40" font-size="16" font-weight="bold" fill="#3498db">Z</text>
+                                <text x="50" y="240" font-size="16" font-weight="bold" fill="#2ecc71">Y</text>
+                                
+                                <!-- Punto de origen -->
+                                <circle cx="150" cy="150" r="3" fill="#000"/>
+                                <text x="140" y="170" font-size="12" fill="#000">O</text>
+                                
+                                <!-- Vector de posición -->
+                                <line x1="150" y1="150" x2="200" y2="100" stroke="#9b59b6" stroke-width="2.5" stroke-dasharray="5,5"/>
+                                <text x="210" y="95" font-size="14" font-weight="bold" fill="#9b59b6">r(t)</text>
+                                
+                                <!-- Marcadores de SVG -->
+                                <defs>
+                                    <marker id="arrowred" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                        <polygon points="0,0 10,5 0,10" fill="#e74c3c"/>
+                                    </marker>
+                                    <marker id="arrowblue" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                        <polygon points="0,0 10,5 0,10" fill="#3498db"/>
+                                    </marker>
+                                    <marker id="arrowgreen" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                        <polygon points="0,0 10,5 0,10" fill="#2ecc71"/>
+                                    </marker>
+                                </defs>
+                            </svg>
+                        </div>
+                        <p class="text-muted mt-3 mb-0">
+                            El vector de posición <strong>r(t)</strong> apunta desde el origen O hasta la ubicación del objeto.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. EJERCICIO RESUELTO -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Ejercicio Resuelto</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="fw-bold">Problema:</p>
+                        <p>
+                            Un proyectil se lanza desde el origen con velocidad inicial de 20 m/s en 45° respecto al plano horizontal. 
+                            Su movimiento se describe con:
+                        </p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$x(t) = 14.14t \text{ m}$$
+                            $$y(t) = 14.14t \text{ m}$$
+                            $$z(t) = 14.14t - 5t^2 \text{ m}$$
+                        </div>
+                        <p class="fw-bold mt-3">a) Encuentra la posición en t = 2 segundos</p>
+                        <div class="bg-light p-2 rounded mb-2">
+                            $$x(2) = 14.14 \times 2 = 28.28 \text{ m}$$
+                            $$y(2) = 14.14 \times 2 = 28.28 \text{ m}$$
+                            $$z(2) = 14.14(2) - 5(2)^2 = 28.28 - 20 = 8.28 \text{ m}$$
+                        </div>
+                        <p class="text-muted">
+                            <strong>Respuesta:</strong> La posición es <strong>(28.28, 28.28, 8.28) m</strong>
+                        </p>
+
+                        <p class="fw-bold mt-3">b) Calcula la magnitud del vector de posición</p>
+                        <div class="bg-light p-2 rounded mb-2">
+                            $$|\vec{r}(2)| = \sqrt{28.28^2 + 28.28^2 + 8.28^2} = \sqrt{800 + 800 + 68.56} = \sqrt{1668.56} \approx 40.85 \text{ m}$$
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. APLICACIÓN EN INGENIERÍA -->
+                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Conexión con Ingeniería de Software</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            <strong>Videojuegos 3D:</strong> En motores como Unity o Unreal Engine, cada objeto (personaje, enemy, proyectil) 
+                            tiene un vector de posición en 3D. El sistema de física del juego actualiza continuamente estas coordenadas.
+                        </p>
+                        <p>
+                            <strong>Gráficos computacionales:</strong> Las cámaras virtuales se posicionan usando coordenadas 3D para 
+                            renderizar la escena desde diferentes ángulos.
+                        </p>
+                        <p class="text-muted mb-0">
+                            <strong>Simulaciones:</strong> Drones, robots y sistemas de realidad aumentada dependen del cálculo 
+                            de movimiento en 3 dimensiones para navegar el espacio.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- TAB 2: MOVIMIENTO CIRCULAR UNIFORME -->
+            <div class="tab-pane fade" id="mcu-content" role="tabpanel">
+
+                <!-- 1. CONCEPTO -->
+                <div class="card my-4  border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold"> Concepto</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            El <strong>Movimiento Circular Uniforme (MCU)</strong> es el movimiento de un objeto que se desplaza 
+                            en una trayectoria circular con <strong>rapidez constante</strong>.
+                        </p>
+                        <p>
+                            Aunque la rapidez (magnitud de la velocidad) es constante, la <strong>velocidad está cambiando continuamente</strong> 
+                            porque siempre apunta en la dirección tangente al círculo, que va girando.
+                        </p>
+                        <p class="text-muted mb-0">
+                            <strong>Ejemplos:</strong> Un satélite orbitando un planeta, un auto en una curva a velocidad constante, 
+                            o una rueda girando a RPM fijo.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 2. FÓRMULAS CLAVE -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold">Fórmulas Clave</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="fw-bold">Período (T) - tiempo para dar una vuelta:</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$T = \frac{1}{f} \text{ (en segundos)}$$
+                        </div>
+
+                        <p class="fw-bold">Frecuencia (f) - vueltas por unidad de tiempo:</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$f = \frac{1}{T} \text{ (en Hz o vueltas/s)}$$
+                        </div>
+
+                        <p class="fw-bold">Velocidad angular (ω):</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$\omega = \frac{2\pi}{T} = 2\pi f \text{ (en rad/s)}$$
+                        </div>
+
+                        <p class="fw-bold">Velocidad tangencial (v) - rapidez lineal:</p>
+                        <div class="bg-light p-3 rounded mb-3">
+                            $$v = \omega r = \frac{2\pi r}{T}$$
+                            <small class="d-block text-muted mt-2">donde r es el radio de la trayectoria</small>
+                        </div>
+
+                        <p class="fw-bold">Aceleración centrípeta (siempre hacia el centro):</p>
+                        <div class="bg-light p-3 rounded">
+                            $$a_c = \frac{v^2}{r} = \omega^2 r$$
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. DIAGRAMA -->
+                <div class="card my.5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold"> Diagrama de MCU</h4>
+                    </div>
+                    <div class="card-body text-center">
+                        <div style="background: #f0f4f8; padding: 2rem; border-radius: 8px;">
+                            <svg width="350" height="350" viewBox="0 0 350 350" xmlns="http://www.w3.org/2000/svg">
+                                <!-- Círculo de trayectoria -->
+                                <circle cx="175" cy="175" r="100" fill="none" stroke="#3498db" stroke-width="2" stroke-dasharray="5,5"/>
+                                
+                                <!-- Centro -->
+                                <circle cx="175" cy="175" r="3" fill="#2c3e50"/>
+                                
+                                <!-- Objeto en movimiento -->
+                                <circle cx="275" cy="175" r="8" fill="#e74c3c"/>
+                                
+                                <!-- Radio -->
+                                <line x1="175" y1="175" x2="275" y2="175" stroke="#2c3e50" stroke-width="2"/>
+                                <text x="220" y="165" font-size="14" font-weight="bold" fill="#2c3e50">r</text>
+                                
+                                <!-- Velocidad tangencial -->
+                                <line x1="275" y1="175" x2="275" y2="100" stroke="#27ae60" stroke-width="2.5" marker-end="url(#arrowgreen2)"/>
+                                <text x="285" y="130" font-size="14" font-weight="bold" fill="#27ae60">v</text>
+                                
+                                <!-- Aceleración centrípeta -->
+                                <line x1="275" y1="175" x2="225" y2="175" stroke="#e67e22" stroke-width="2.5" marker-end="url(#arroworange)"/>
+                                <text x="235" y="190" font-size="14" font-weight="bold" fill="#e67e22">a<tspan baseline-shift="sub">c</tspan></text>
+                                
+                                <!-- Ángulo angular (para mostrar rotación) -->
+                                <path d="M 210 175 A 35 35 0 0 0 175 140" fill="none" stroke="#9b59b6" stroke-width="2" stroke-dasharray="3,3"/>
+                                <text x="200" y="150" font-size="12" fill="#9b59b6">θ</text>
+                                
+                                <!-- Marcadores de SVG -->
+                                <defs>
+                                    <marker id="arrowgreen2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                        <polygon points="0,0 10,5 0,10" fill="#27ae60"/>
+                                    </marker>
+                                    <marker id="arroworange" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+                                        <polygon points="0,0 10,5 0,10" fill="#e67e22"/>
+                                    </marker>
+                                </defs>
+                            </svg>
+                        </div>
+                        <p class="text-muted mt-3 mb-0">
+                            La <strong>velocidad v</strong> es tangente al círculo. La <strong>aceleración centrípeta a<sub>c</sub></strong> 
+                            siempre apunta hacia el centro.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- 4. EJERCICIO RESUELTO -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold"> Ejercicio Resuelto</h4>
+                    </div>
+                    <div class="card-body">
+                        <p class="fw-bold">Problema:</p>
+                        <p>
+                            Una rueda de 0.5 m de radio gira a 120 RPM (revoluciones por minuto). 
+                            Calcula: a) período, b) velocidad angular, c) velocidad tangencial, d) aceleración centrípeta.
+                        </p>
+
+                        <p class="fw-bold mt-3">a) Período (T)</p>
+                        <div class="bg-light p-2 rounded mb-2">
+                            $$f = \frac{120 \text{ rev/min}}{60 \text{ s/min}} = 2 \text{ rev/s} = 2 \text{ Hz}$$
+                            $$T = \frac{1}{f} = \frac{1}{2} = 0.5 \text{ s}$$
+                        </div>
+
+                        <p class="fw-bold mt-3">b) Velocidad angular (ω)</p>
+                        <div class="bg-light p-2 rounded mb-2">
+                            $$\omega = 2\pi f = 2\pi(2) = 4\pi \approx 12.57 \text{ rad/s}$$
+                        </div>
+
+                        <p class="fw-bold mt-3">c) Velocidad tangencial (v)</p>
+                        <div class="bg-light p-2 rounded mb-2">
+                            $$v = \omega r = 12.57 \times 0.5 = 6.28 \text{ m/s}$$
+                        </div>
+
+                        <p class="fw-bold mt-3">d) Aceleración centrípeta (a<sub>c</sub>)</p>
+                        <div class="bg-light p-2 rounded">
+                            $$a_c = \frac{v^2}{r} = \frac{(6.28)^2}{0.5} = \frac{39.44}{0.5} = 78.88 \text{ m/s}^2$$
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. APLICACIÓN EN INGENIERÍA -->
+                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                    <div class="card-header bg-light">
+                        <h4 class="mb-0 fw-bold"> Conexión con Ingeniería de Software</h4>
+                    </div>
+                    <div class="card-body">
+                        <p>
+                            <strong>Videojuegos:</strong> Para hacer que un enemy orbite alrededor del jugador o que una cámara 
+                            gire alrededor de un objeto, usamos MCU para calcular posiciones en forma circular.
+                        </p>
+                        <p>
+                            <strong>Animaciones:</strong> Las animaciones circulares (ruedas, ventiladores, planetas orbitando) 
+                            se basan en los cálculos de MCU.
+                        </p>
+                        <p class="text-muted mb-0">
+                            <strong>Simulaciones físicas:</strong> Sistemas planetarios, satélites y drones que orbitan requieren 
+                            entender MCU para calcular trayectorias precisas.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-3 mt-5">
+        <div class="container text-center">
+            <p class="mb-1"><strong>Cristopher Gutierrez Vega</strong></p>
+            <p class="mb-1 small">Universidad CENFOTEC | Ingeniería de Software</p>
+            <p class="text-muted small">Portafolio de Física - 2026</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

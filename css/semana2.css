@@ -1,0 +1,59 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+      background-color: #f0f4f8;
+}
+
+/* ============================================
+   NAVBAR
+   ============================================ */
+.navbar {
+      color: white !important;
+    background-color: #8DA7BE !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.navbar-brand {
+    font-weight: 800;
+    font-size: 1.5rem;
+    letter-spacing: -1px;
+}
+
+.navbar-nav .nav-link {
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block;
+    font-weight: 500;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #64b5f6 !important;
+    transform: translateY(-3px);
+}
+
+.dropdown-menu {
+    background-color: #8DA7BE;
+    border: none;
+    box-shadow: 0 4px 12px rgba(87, 142, 243, 0.15);
+}
+
+.dropdown-item {
+    color: white;
+    transition: background-color 0.2s ease;
+}
+
+.dropdown-item:hover {
+    background-color: #1a2f45;
+    color: #64b5f6;
+}
