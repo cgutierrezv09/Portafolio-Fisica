@@ -407,20 +407,57 @@ p {
 }
 
 /* ============================================
-   ACCESIBILIDAD
+   RESPONSIVIDAD PARA FÓRMULAS Y DIAGRAMAS
    ============================================ */
-@media (prefers-reduced-motion: reduce) {
-    * {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+
+/* Contenedores de fórmulas */
+.bg-light.p-3.rounded {
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding: 1.5rem !important;
+    display: block !important;
+    min-width: 0 !important;
+    white-space: nowrap !important;
+}
+
+/* SVG responsive */
+svg {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Desktop */
+@media (min-width: 769px) {
+    .MathJax {
+        font-size: 1.1em !important;
     }
 }
 
-a:focus-visible,
-button:focus-visible,
-.btn:focus-visible {
-    outline: 2px solid #64b5f6;
-    outline-offset: 2px;
-    border-radius: 4px;
+/* Tablet */
+@media (max-width: 768px) {
+    .bg-light.p-3.rounded {
+        padding: 0.8rem !important;
+    }
+    
+    .MathJax {
+        font-size: 0.8em !important;
+    }
+}
+
+/* Móvil */
+@media (max-width: 576px) {
+    .bg-light.p-3.rounded {
+        padding: 0.6rem !important;
+    }
+    
+    .MathJax {
+        font-size: 0.7em !important;
+    }
+    
+    svg {
+        width: 100% !important;
+        max-height: 250px !important;
+    }
 }
