@@ -407,57 +407,66 @@ p {
 }
 
 /* ============================================
-   RESPONSIVIDAD PARA FÓRMULAS Y DIAGRAMAS
+   RESPONSIVIDAD OPTIMIZADA
    ============================================ */
 
-/* Contenedores de fórmulas */
 .bg-light.p-3.rounded {
     overflow-x: auto !important;
     overflow-y: hidden !important;
+    -webkit-overflow-scrolling: touch !important;
     padding: 1.5rem !important;
-    display: block !important;
-    min-width: 0 !important;
-    white-space: nowrap !important;
+    display: flex !important;
+    justify-content: center !important;
 }
 
 /* SVG responsive */
 svg {
     max-width: 100%;
     height: auto;
-    display: block;
-    margin: 0 auto;
 }
 
-/* Desktop */
+/* ============================================
+   DESKTOP (769px+)
+   ============================================ */
 @media (min-width: 769px) {
-    .MathJax {
-        font-size: 1.1em !important;
-    }
+    .MathJax { font-size: 1.1em !important; }
 }
 
-/* Tablet */
+/* ============================================
+   TABLET (577px - 768px)
+   ============================================ */
 @media (max-width: 768px) {
-    .bg-light.p-3.rounded {
-        padding: 0.8rem !important;
-    }
-    
-    .MathJax {
-        font-size: 0.8em !important;
-    }
+    .bg-light.p-3.rounded { padding: 1rem !important; }
+    .MathJax { font-size: 0.85em !important; }
 }
 
-/* Móvil */
+/* ============================================
+   MÓVIL (hasta 576px)
+   ============================================ */
 @media (max-width: 576px) {
-    .bg-light.p-3.rounded {
+    .card-body { padding: 1rem !important; }
+    .bg-light.p-3.rounded { 
+        padding: 0.8rem !important;
+        overflow-x: scroll !important;
+    }
+    .MathJax { font-size: 0.75em !important; }
+    svg { max-width: 90%; }
+}
+
+/* ============================================
+   iPHONE 11 (375px - 414px)
+   ============================================ */
+@media (max-width: 414px) {
+    .bg-light.p-3.rounded { 
         padding: 0.6rem !important;
+        overflow-x: scroll !important;
+        min-height: 60px;
     }
     
-    .MathJax {
-        font-size: 0.7em !important;
+    .bg-light.p-3.rounded mjx-container {
+        min-width: max-content !important;
     }
     
-    svg {
-        width: 100% !important;
-        max-height: 250px !important;
-    }
+    .MathJax { font-size: 0.65em !important; }
+    svg { max-width: 100%; max-height: 200px; }
 }
