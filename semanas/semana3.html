@@ -58,13 +58,13 @@
     <section class="container mb-5">
         <ul class="nav nav-tabs nav-fill mb-4" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active fw-bold" id="fc-tab" data-bs-toggle="tab" data-bs-target="#fc-content" type="button">
-                     Fuerza Centrípeta
+                <button class="nav-link active fw-bold" id="fc-tab" data-bs-toggle="tab" data-bs-target="#fc-content" type="button" role="tab" aria-controls="fc-content" aria-selected="true">
+                    Fuerza Centrípeta
                 </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link fw-bold" id="ff-tab" data-bs-toggle="tab" data-bs-target="#ff-content" type="button">
-                     Fuerza de Fricción
+                <button class="nav-link fw-bold" id="ff-tab" data-bs-toggle="tab" data-bs-target="#ff-content" type="button" role="tab" aria-controls="ff-content" aria-selected="false">
+                    Fuerza de Fricción
                 </button>
             </li>
         </ul>
@@ -72,12 +72,12 @@
         <div class="tab-content">
 
             <!-- TAB 1: FUERZA CENTRÍPETA -->
-            <div class="tab-pane fade show active" id="fc-content" role="tabpanel">
+            <div class="tab-pane fade show active" id="fc-content" role="tabpanel" aria-labelledby="fc-tab">
 
                 <!-- 1. CONCEPTO -->
-                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
-                        <h4 class="mb-0 fw-bold"> Concepto</h4>
+                        <h4 class="mb-0 fw-bold">Concepto</h4>
                     </div>
                     <div class="card-body">
                         <p>
@@ -105,13 +105,13 @@
                 </div>
 
                 <!-- 2. FÓRMULAS CLAVE -->
-                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
-                        <h4 class="mb-0 fw-bold"> Fórmulas Clave</h4>
+                        <h4 class="mb-0 fw-bold">Fórmulas Clave</h4>
                     </div>
                     <div class="card-body">
                         <p class="fw-bold">Fuerza centrípeta (magnitud):</p>
-                        <div class="bg-light p-3 rounded mb-3">
+                        <div class="bg-light p-3 rounded mb-3" style="overflow-x: auto;">
                             $$F_c = \frac{mv^2}{r} = m\omega^2 r$$
                         </div>
                         <small class="d-block text-muted mb-3">
@@ -119,25 +119,25 @@
                         </small>
 
                         <p class="fw-bold">Aceleración centrípeta:</p>
-                        <div class="bg-light p-3 rounded mb-3">
+                        <div class="bg-light p-3 rounded mb-3" style="overflow-x: auto;">
                             $$a_c = \frac{v^2}{r} = \omega^2 r$$
                         </div>
 
                         <p class="fw-bold">Segunda ley de Newton (radial):</p>
-                        <div class="bg-light p-3 rounded">
+                        <div class="bg-light p-3 rounded" style="overflow-x: auto;">
                             $$\sum F_{\text{hacia centro}} = ma_c = \frac{mv^2}{r}$$
                         </div>
                     </div>
                 </div>
 
                 <!-- 3. DIAGRAMA -->
-                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
-                        <h4 class="mb-0 fw-bold"> Diagrama de Fuerzas</h4>
+                        <h4 class="mb-0 fw-bold">Diagrama de Fuerzas</h4>
                     </div>
                     <div class="card-body text-center">
                         <div style="background: #f0f4f8; padding: 2rem; border-radius: 8px;">
-                            <svg width="100%" height="auto" viewBox="0 0 300 300" style="max-width: 400px;"  xmlns="http://www.w3.org/2000/svg" >
+                            <svg width="100%" height="auto" viewBox="0 0 300 300" style="max-width: 400px; margin: 0 auto;" xmlns="http://www.w3.org/2000/svg">
                                 <!-- Círculo de trayectoria -->
                                 <circle cx="200" cy="150" r="80" fill="none" stroke="#3498db" stroke-width="2" stroke-dasharray="5,5"/>
                                 
@@ -181,9 +181,9 @@
                 </div>
 
                 <!-- 4. EJERCICIO RESUELTO -->
-                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
-                        <h4 class="mb-0 fw-bold"> Ejercicio Resuelto</h4>
+                        <h4 class="mb-0 fw-bold">Ejercicio Resuelto</h4>
                     </div>
                     <div class="card-body">
                         <p class="fw-bold">Problema:</p>
@@ -193,7 +193,7 @@
                         </p>
 
                         <p class="fw-bold mt-3">a) Fuerza centrípeta</p>
-                        <div class="bg-light p-2 rounded mb-2">
+                        <div class="bg-light p-2 rounded mb-2" style="overflow-x: auto;">
                             $$F_c = \frac{mv^2}{r} = \frac{1200 \times (15)^2}{50} = \frac{1200 \times 225}{50} = \frac{270000}{50} = 5400 \text{ N}$$
                         </div>
                         <p class="text-muted">
@@ -201,7 +201,7 @@
                         </p>
 
                         <p class="fw-bold mt-3">b) Aceleración centrípeta</p>
-                        <div class="bg-light p-2 rounded">
+                        <div class="bg-light p-2 rounded" style="overflow-x: auto;">
                             $$a_c = \frac{v^2}{r} = \frac{(15)^2}{50} = \frac{225}{50} = 4.5 \text{ m/s}^2$$
                         </div>
                         <p class="text-muted">
@@ -211,9 +211,9 @@
                 </div>
 
                 <!-- 5. APLICACIÓN EN INGENIERÍA -->
-                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
-                        <h4 class="mb-0 fw-bold"> Conexión con Ingeniería de Software</h4>
+                        <h4 class="mb-0 fw-bold">Conexión con Ingeniería de Software</h4>
                     </div>
                     <div class="card-body">
                         <p>
@@ -234,12 +234,12 @@
             </div>
 
             <!-- TAB 2: FUERZA DE FRICCIÓN -->
-            <div class="tab-pane fade" id="ff-content" role="tabpanel">
+            <div class="tab-pane fade" id="ff-content" role="tabpanel" aria-labelledby="ff-tab">
 
                 <!-- 1. CONCEPTO -->
-                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
-                        <h4 class="mb-0 fw-bold"> Concepto</h4>
+                        <h4 class="mb-0 fw-bold">Concepto</h4>
                     </div>
                     <div class="card-body">
                         <p>
@@ -267,13 +267,13 @@
                 </div>
 
                 <!-- 2. FÓRMULAS CLAVE -->
-                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
-                        <h4 class="mb-0 fw-bold"> Fórmulas Clave</h4>
+                        <h4 class="mb-0 fw-bold">Fórmulas Clave</h4>
                     </div>
                     <div class="card-body">
                         <p class="fw-bold">Fricción cinética (objeto en movimiento):</p>
-                        <div class="bg-light p-3 rounded mb-3">
+                        <div class="bg-light p-3 rounded mb-3" style="overflow-x: auto;">
                             $$f_k = \mu_k N$$
                         </div>
                         <small class="d-block text-muted mb-3">
@@ -281,7 +281,7 @@
                         </small>
 
                         <p class="fw-bold">Fricción estática máxima (justo antes de moverse):</p>
-                        <div class="bg-light p-3 rounded mb-3">
+                        <div class="bg-light p-3 rounded mb-3" style="overflow-x: auto;">
                             $$f_{s,\text{max}} = \mu_s N$$
                         </div>
                         <small class="d-block text-muted mb-3">
@@ -289,25 +289,25 @@
                         </small>
 
                         <p class="fw-bold">Fricción estática en general (mientras está en reposo):</p>
-                        <div class="bg-light p-3 rounded mb-3">
+                        <div class="bg-light p-3 rounded mb-3" style="overflow-x: auto;">
                             $$f_s \leq \mu_s N$$
                         </div>
 
                         <p class="fw-bold">En una superficie horizontal plana:</p>
-                        <div class="bg-light p-3 rounded">
+                        <div class="bg-light p-3 rounded" style="overflow-x: auto;">
                             $$N = mg$$
                         </div>
                     </div>
                 </div>
 
                 <!-- 3. DIAGRAMA -->
-                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
-                        <h4 class="mb-0 fw-bold"> Diagrama de Cuerpo Libre</h4>
+                        <h4 class="mb-0 fw-bold">Diagrama de Cuerpo Libre</h4>
                     </div>
                     <div class="card-body text-center">
                         <div style="background: #f0f4f8; padding: 2rem; border-radius: 8px;">
-                            <svg width="400" height="320" viewBox="0 0 400 320" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="100%" height="auto" viewBox="0 0 400 320" style="max-width: 100%; margin: 0 auto;" xmlns="http://www.w3.org/2000/svg">
                                 <!-- Superficie -->
                                 <line x1="50" y1="250" x2="350" y2="250" stroke="#34495e" stroke-width="3"/>
                                 <line x1="50" y1="250" x2="55" y2="260" stroke="#34495e" stroke-width="1"/>
@@ -371,9 +371,9 @@
                 </div>
 
                 <!-- 4. EJERCICIO RESUELTO -->
-                <div class="card my-5  border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
-                        <h4 class="mb-0 fw-bold"> Ejercicio Resuelto</h4>
+                        <h4 class="mb-0 fw-bold">Ejercicio Resuelto</h4>
                     </div>
                     <div class="card-body">
                         <p class="fw-bold">Problema:</p>
@@ -384,12 +384,12 @@
                         </p>
 
                         <p class="fw-bold mt-3">a) Fuerza normal (en superficie horizontal):</p>
-                        <div class="bg-light p-2 rounded mb-2">
+                        <div class="bg-light p-2 rounded mb-2" style="overflow-x: auto;">
                             $$N = mg = 10 \times 9.8 = 98 \text{ N}$$
                         </div>
 
                         <p class="fw-bold mt-3">b) Fricción estática máxima:</p>
-                        <div class="bg-light p-2 rounded mb-2">
+                        <div class="bg-light p-2 rounded mb-2" style="overflow-x: auto;">
                             $$f_{s,\text{max}} = \mu_s N = 0.5 \times 98 = 49 \text{ N}$$
                         </div>
                         <p class="text-muted">
@@ -397,7 +397,7 @@
                         </p>
 
                         <p class="fw-bold mt-3">c) Fricción cinética (si el bloque ya se está moviendo):</p>
-                        <div class="bg-light p-2 rounded">
+                        <div class="bg-light p-2 rounded" style="overflow-x: auto;">
                             $$f_k = \mu_k N = 0.3 \times 98 = 29.4 \text{ N}$$
                         </div>
                         <p class="text-muted">
@@ -407,9 +407,9 @@
                 </div>
 
                 <!-- 5. APLICACIÓN EN INGENIERÍA -->
-                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
-                        <h4 class="mb-0 fw-bold"> Conexión con Ingeniería de Software</h4>
+                        <h4 class="mb-0 fw-bold">Conexión con Ingeniería de Software</h4>
                     </div>
                     <div class="card-body">
                         <p>
