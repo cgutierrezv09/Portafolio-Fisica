@@ -10,6 +10,116 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <!-- MathJax para fórmulas -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .nav-tabs .nav-link {
+            touch-action: manipulation;
+            cursor: pointer;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .formula-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            overflow-y: hidden;
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 0.375rem;
+        }
+
+        .formula-content {
+            min-width: max-content;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        mjx-container {
+            margin: 0 !important;
+        }
+
+        canvas {
+            border: 2px solid #0D1B2A;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 1rem auto;
+            display: block;
+        }
+
+        .control-container {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .control-container input[type="range"] {
+            width: 100%;
+        }
+
+        .control-value {
+            text-align: center;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 0.5rem;
+        }
+
+        .energy-bar {
+            display: flex;
+            height: 30px;
+            border-radius: 4px;
+            overflow: hidden;
+            margin: 0.5rem 0;
+        }
+
+        .energy-bar-u {
+            background-color: #2ecc71;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .energy-bar-k {
+            background-color: #3498db;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        @media (max-width: 768px) {
+            .formula-container {
+                padding: 0.75rem;
+            }
+            .nav-tabs .nav-link {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .nav-tabs .nav-link {
+                font-size: 0.85rem;
+                min-height: 44px;
+                padding: 0.5rem;
+            }
+            .formula-container {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -27,7 +137,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html">Inicio</a>
                     </li>
-
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -58,12 +167,12 @@
     <section class="container mb-5">
         <ul class="nav nav-tabs nav-fill mb-4" role="tablist">
             <li class="nav-item" role="presentation">
-                <button class="nav-link active fw-bold" id="trabajo-tab" data-bs-toggle="tab" data-bs-target="#trabajo-content" type="button">
+                <button class="nav-link active fw-bold" id="trabajo-tab" data-bs-toggle="tab" data-bs-target="#trabajo-content" type="button" role="tab" aria-controls="trabajo-content" aria-selected="true">
                     Trabajo
                 </button>
             </li>
             <li class="nav-item" role="presentation">
-                <button class="nav-link fw-bold" id="energia-tab" data-bs-toggle="tab" data-bs-target="#energia-content" type="button">
+                <button class="nav-link fw-bold" id="energia-tab" data-bs-toggle="tab" data-bs-target="#energia-content" type="button" role="tab" aria-controls="energia-content" aria-selected="false">
                     Conservación de la Energía
                 </button>
             </li>
@@ -72,10 +181,10 @@
         <div class="tab-content">
 
             <!-- TAB 1: TRABAJO -->
-            <div class="tab-pane fade show active" id="trabajo-content" role="tabpanel">
+            <div class="tab-pane fade show active" id="trabajo-content" role="tabpanel" aria-labelledby="trabajo-tab">
 
                 <!-- 1. CONCEPTO -->
-                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
                         <h4 class="mb-0 fw-bold">Concepto</h4>
                     </div>
@@ -100,134 +209,105 @@
                 </div>
 
                 <!-- 2. FÓRMULAS CLAVE -->
-                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
                         <h4 class="mb-0 fw-bold">Fórmulas Clave</h4>
                     </div>
                     <div class="card-body">
                         <p class="fw-bold">Trabajo con ángulo entre fuerza y desplazamiento:</p>
-                        <div class="bg-light p-3 rounded mb-3">
-                            $$W = F \cdot d \cdot \cos(\theta)$$
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$W = F \cdot d \cdot \cos(\theta)$$
+                            </div>
                         </div>
                         <small class="d-block text-muted mb-3">
                             donde F = magnitud de la fuerza, d = desplazamiento, θ = ángulo entre F y d
                         </small>
 
                         <p class="fw-bold">Cuando la fuerza es paralela al desplazamiento (θ = 0°):</p>
-                        <div class="bg-light p-3 rounded mb-3">
-                            $$W = F \cdot d$$
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$W = F \cdot d$$
+                            </div>
                         </div>
 
                         <p class="fw-bold">Cuando la fuerza es perpendicular (θ = 90°):</p>
-                        <div class="bg-light p-3 rounded mb-3">
-                            $$W = 0$$
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$W = 0$$
+                            </div>
                         </div>
 
                         <p class="fw-bold">Potencia (trabajo por unidad de tiempo):</p>
-                        <div class="bg-light p-3 rounded">
-                            $$P = \frac{W}{t} \text{ (en watts, W)}$$
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$P = \frac{W}{t}$$
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3. DIAGRAMA -->
-                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                <!-- 3. SIMULACIÓN INTERACTIVA -->
+                <div class="card my-5">
                     <div class="card-header bg-light">
-                        <h4 class="mb-0 fw-bold">Diagrama de Trabajo</h4>
+                        <h4 class="mb-0 fw-bold">Simulación Interactiva</h4>
                     </div>
                     <div class="card-body text-center">
-                        <div style="background: #f0f4f8; padding: 2rem; border-radius: 8px;">
-                            <svg width="100%" height="auto" viewBox="0 0 300 300" style="max-width: 400px;"  xmlns="http://www.w3.org/2000/svg">
-                                <!-- Piso -->
-                                <line x1="30" y1="180" x2="420" y2="180" stroke="#34495e" stroke-width="3"/>
-                                <line x1="30" y1="180" x2="35" y2="190" stroke="#34495e" stroke-width="1"/>
-                                <line x1="60" y1="180" x2="65" y2="190" stroke="#34495e" stroke-width="1"/>
-                                <line x1="90" y1="180" x2="95" y2="190" stroke="#34495e" stroke-width="1"/>
-                                <line x1="120" y1="180" x2="125" y2="190" stroke="#34495e" stroke-width="1"/>
-                                <line x1="150" y1="180" x2="155" y2="190" stroke="#34495e" stroke-width="1"/>
-                                <line x1="180" y1="180" x2="185" y2="190" stroke="#34495e" stroke-width="1"/>
-                                <line x1="210" y1="180" x2="215" y2="190" stroke="#34495e" stroke-width="1"/>
-                                <line x1="240" y1="180" x2="245" y2="190" stroke="#34495e" stroke-width="1"/>
-                                <line x1="270" y1="180" x2="275" y2="190" stroke="#34495e" stroke-width="1"/>
-                                <line x1="300" y1="180" x2="305" y2="190" stroke="#34495e" stroke-width="1"/>
-                                <line x1="330" y1="180" x2="335" y2="190" stroke="#34495e" stroke-width="1"/>
-                                <line x1="360" y1="180" x2="365" y2="190" stroke="#34495e" stroke-width="1"/>
-                                <line x1="390" y1="180" x2="395" y2="190" stroke="#34495e" stroke-width="1"/>
-                                
-                                <!-- Bloque -->
-                                <rect x="120" y="130" width="70" height="50" fill="#e74c3c" stroke="#c0392b" stroke-width="2"/>
-                                <text x="155" y="160" text-anchor="middle" font-size="14" font-weight="bold" fill="white">m</text>
-                                
-                                <!-- Fuerza aplicada -->
-                                <line x1="190" y1="155" x2="280" y2="155" stroke="#3498db" stroke-width="3" marker-end="url(#arrowblue4)"/>
-                                <text x="230" y="135" font-size="14" font-weight="bold" fill="#3498db">F</text>
-                                
-                                <!-- Desplazamiento -->
-                                <path d="M 120 210 L 280 210" fill="none" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,5"/>
-                                <line x1="280" y1="210" x2="270" y2="205" stroke="#27ae60" stroke-width="2"/>
-                                <line x1="280" y1="210" x2="270" y2="215" stroke="#27ae60" stroke-width="2"/>
-                                <text x="195" y="235" font-size="14" font-weight="bold" fill="#27ae60">d</text>
-                                
-                                <!-- Ángulo entre F y d (mostrado con línea punteada) -->
-                                <path d="M 155 155 L 155 180" fill="none" stroke="#9b59b6" stroke-width="1" stroke-dasharray="3,3"/>
-                                <text x="140" y="175" font-size="12" fill="#9b59b6">θ</text>
-                                
-                                <!-- Marcadores de SVG -->
-                                <defs>
-                                    <marker id="arrowblue4" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
-                                        <polygon points="0,0 10,5 0,10" fill="#3498db"/>
-                                    </marker>
-                                </defs>
-                            </svg>
+                        <canvas id="canvasTrabajo"></canvas>
+                        <div class="control-container">
+                            <p class="fw-bold mb-2">Ángulo entre Fuerza y Desplazamiento (grados)</p>
+                            <input type="range" id="anguloTrabajo" min="0" max="90" step="5" value="0">
+                            <p class="control-value">θ = 0°</p>
+                        </div>
+                        <div class="control-container">
+                            <p id="trabajoInfo" style="text-align: center; font-size: 0.9rem; color: #555;">
+                                F = 50 N | d = 8 m | W = 400 J
+                            </p>
                         </div>
                         <p class="text-muted mt-3 mb-0">
-                            El trabajo depende de la componente de la fuerza <strong>en la dirección del desplazamiento</strong> (por eso el coseno del ángulo).
+                            Ajusta el ángulo para ver cómo cambia el trabajo. En 0° es máximo, en 90° es cero.
                         </p>
                     </div>
                 </div>
 
                 <!-- 4. EJERCICIO RESUELTO -->
-                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
                         <h4 class="mb-0 fw-bold">Ejercicio Resuelto</h4>
                     </div>
                     <div class="card-body">
                         <p class="fw-bold">Problema:</p>
                         <p>
-                            Una caja es arrastrada 8 metros sobre el piso con una fuerza de 50 N aplicada a un ángulo de 30° respecto a la horizontal. 
+                            Una caja es arrastrada 8 metros sobre el piso con una fuerza de 50 N aplicada a un ángulo de 30°. 
                             Calcula el trabajo realizado.
                         </p>
 
                         <p class="fw-bold mt-3">Solución:</p>
-                        <div class="bg-light p-2 rounded mb-2">
-                            $$W = F \cdot d \cdot \cos(\theta)$$
-                            $$W = 50 \times 8 \times \cos(30°)$$
-                            $$W = 50 \times 8 \times 0.866$$
-                            $$W = 346.4 \text{ J}$$
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$W = F \cdot d \cdot \cos(\theta) = 50 \times 8 \times \cos(30°) = 50 \times 8 \times 0.866 = 346.4 \text{ J}$$
+                            </div>
                         </div>
                         <p class="text-muted">
-                            <strong>Respuesta:</strong> El trabajo realizado es <strong>346.4 J (joules)</strong>. 
-                            Si la fuerza fuera horizontal (θ = 0°), sería 400 J. El ángulo reduce el trabajo efectivo.
+                            <strong>Respuesta:</strong> El trabajo es <strong>346.4 J</strong>. Si θ = 0°, sería 400 J. El ángulo reduce el trabajo efectivo.
                         </p>
                     </div>
                 </div>
 
                 <!-- 5. APLICACIÓN EN INGENIERÍA -->
-                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
                         <h4 class="mb-0 fw-bold">Conexión con Ingeniería de Software</h4>
                     </div>
                     <div class="card-body">
                         <p>
-                            <strong>Videojuegos:</strong> El motor de física calcula el trabajo para determinar cuánta energía gasta un personaje 
-                            al mover un objeto o saltar. Esto afecta la fatiga o la batería de un robot.
+                            <strong>Videojuegos:</strong> El motor de física calcula el trabajo para determinar cuánta energía gasta un personaje.
                         </p>
                         <p>
-                            <strong>Simulaciones de robótica:</strong> Los robots deben optimizar el trabajo (energía) para completar tareas 
-                            eficientemente.
+                            <strong>Simulaciones de robótica:</strong> Los robots deben optimizar el trabajo para completar tareas eficientemente.
                         </p>
                         <p class="text-muted mb-0">
-                            <strong>Juegos de carreras:</strong> El trabajo realizado por el motor se traduce en aceleración y velocidad.
+                            <strong>Juegos de carreras:</strong> El trabajo realizado por el motor se traduce en aceleración.
                         </p>
                     </div>
                 </div>
@@ -235,10 +315,10 @@
             </div>
 
             <!-- TAB 2: CONSERVACIÓN DE LA ENERGÍA -->
-            <div class="tab-pane fade" id="energia-content" role="tabpanel">
+            <div class="tab-pane fade" id="energia-content" role="tabpanel" aria-labelledby="energia-tab">
 
                 <!-- 1. CONCEPTO -->
-                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
                         <h4 class="mb-0 fw-bold">Concepto</h4>
                     </div>
@@ -255,158 +335,128 @@
                             <li><strong>Energía potencial gravitacional (U):</strong> energía debido a la posición (altura)</li>
                         </ul>
                         <p class="fw-bold">
-                            Si no hay fricción u otras fuerzas disipativas: <strong>E_total = K + U = constante</strong>
+                            Si no hay fricción: <strong>E_total = K + U = constante</strong>
                         </p>
                         <p class="text-muted mb-0">
-                            <strong>Ejemplo:</strong> Una bola que cae: pierde energía potencial pero gana energía cinética. 
-                            La suma de ambas se mantiene igual.
+                            <strong>Ejemplo:</strong> Una bola que cae: pierde energía potencial pero gana energía cinética.
                         </p>
                     </div>
                 </div>
 
                 <!-- 2. FÓRMULAS CLAVE -->
-                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
                         <h4 class="mb-0 fw-bold">Fórmulas Clave</h4>
                     </div>
                     <div class="card-body">
                         <p class="fw-bold">Energía cinética:</p>
-                        <div class="bg-light p-3 rounded mb-3">
-                            $$K = \frac{1}{2}mv^2$$
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$K = \frac{1}{2}mv^2$$
+                            </div>
                         </div>
-                        <small class="d-block text-muted mb-3">
-                            donde m = masa, v = velocidad
-                        </small>
 
                         <p class="fw-bold">Energía potencial gravitacional:</p>
-                        <div class="bg-light p-3 rounded mb-3">
-                            $$U = mgh$$
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$U = mgh$$
+                            </div>
                         </div>
-                        <small class="d-block text-muted mb-3">
-                            donde m = masa, g = 9.8 m/s², h = altura (respecto a un punto de referencia)
-                        </small>
 
                         <p class="fw-bold">Energía total (sin fricción):</p>
-                        <div class="bg-light p-3 rounded mb-3">
-                            $$E_{\text{total}} = K + U = \text{constante}$$
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$E_{\text{total}} = K + U = \text{constante}$$
+                            </div>
                         </div>
 
-                        <p class="fw-bold">Conservación de energía entre dos estados:</p>
-                        <div class="bg-light p-3 rounded">
-                            $$K_1 + U_1 = K_2 + U_2$$
+                        <p class="fw-bold">Conservación entre dos estados:</p>
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$K_1 + U_1 = K_2 + U_2$$
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3. DIAGRAMA -->
-                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                <!-- 3. SIMULACIÓN INTERACTIVA -->
+                <div class="card my-5">
                     <div class="card-header bg-light">
-                        <h4 class="mb-0 fw-bold">Diagrama de Energía</h4>
+                        <h4 class="mb-0 fw-bold">Simulación Interactiva - Bola Cayendo</h4>
                     </div>
                     <div class="card-body text-center">
-                        <div style="background: #f0f4f8; padding: 2rem; border-radius: 8px;">
-                            <svg width="400" height="350" viewBox="0 0 400 350" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Suelo -->
-                                <line x1="30" y1="300" x2="370" y2="300" stroke="#34495e" stroke-width="3"/>
-                                
-                                <!-- Posición inicial (arriba) -->
-                                <circle cx="100" cy="100" r="12" fill="#e74c3c"/>
-                                <text x="100" y="105" text-anchor="middle" font-size="12" font-weight="bold" fill="white">m</text>
-                                
-                                <!-- Línea de altura -->
-                                <line x1="130" y1="100" x2="130" y2="300" stroke="#7f8c8d" stroke-width="1" stroke-dasharray="3,3"/>
-                                <text x="140" y="200" font-size="12" fill="#7f8c8d">h</text>
-                                
-                                <!-- Altura máxima (100% U, 0% K) -->
-                                <rect x="160" y="70" width="80" height="30" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
-                                <text x="200" y="90" text-anchor="middle" font-size="11" font-weight="bold" fill="white">U = mgh</text>
-                                <rect x="160" y="105" width="80" height="5" fill="#3498db" stroke="#2980b9" stroke-width="1"/>
-                                <text x="200" y="125" text-anchor="middle" font-size="10" fill="#3498db">K = 0</text>
-                                
-                                <!-- Posición media (bajando) -->
-                                <circle cx="200" cy="180" r="12" fill="#e74c3c"/>
-                                
-                                <!-- Energía media -->
-                                <rect x="250" y="150" width="40" height="25" fill="#2ecc71" stroke="#27ae60" stroke-width="2"/>
-                                <text x="270" y="167" text-anchor="middle" font-size="9" fill="white">U</text>
-                                <rect x="250" y="180" width="40" height="25" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
-                                <text x="270" y="197" text-anchor="middle" font-size="9" fill="white">K</text>
-                                
-                                <!-- Posición final (suelo, 0% U, 100% K) -->
-                                <circle cx="100" cy="288" r="12" fill="#e74c3c"/>
-                                
-                                <!-- Energía en el suelo -->
-                                <rect x="160" y="260" width="80" height="5" fill="#2ecc71" stroke="#27ae60" stroke-width="1"/>
-                                <text x="200" y="280" text-anchor="middle" font-size="10" fill="#2ecc71">U = 0</text>
-                                <rect x="160" y="290" width="80" height="30" fill="#3498db" stroke="#2980b9" stroke-width="2"/>
-                                <text x="200" y="310" text-anchor="middle" font-size="11" font-weight="bold" fill="white">K = mgh</text>
-                                
-                                <!-- Líneas de movimiento -->
-                                <path d="M 112 88 Q 140 140 188 175" fill="none" stroke="#95a5a6" stroke-width="2" stroke-dasharray="5,5"/>
-                                <path d="M 212 175 Q 240 240 112 276" fill="none" stroke="#95a5a6" stroke-width="2" stroke-dasharray="5,5"/>
-                            </svg>
+                        <canvas id="canvasEnergia"></canvas>
+                        <div class="control-container">
+                            <p class="fw-bold mb-2">Altura Inicial (metros)</p>
+                            <input type="range" id="alturaInicial" min="2" max="10" step="1" value="5">
+                            <p class="control-value">h = 5 m</p>
+                        </div>
+                        <div class="control-container">
+                            <p class="fw-bold mb-3">Energía Total: <span id="energiaTotal">98 J</span></p>
+                            <div class="energy-bar">
+                                <div class="energy-bar-u" id="barU" style="width: 100%;">U = 98 J</div>
+                                <div class="energy-bar-k" id="barK" style="width: 0%;"></div>
+                            </div>
+                            <p id="energiaInfo" style="text-align: center; font-size: 0.85rem; color: #555;">
+                                U = 98 J | K = 0 J | v = 0 m/s
+                            </p>
                         </div>
                         <p class="text-muted mt-3 mb-0">
-                            A medida que el objeto cae, pierde altura (disminuye U) pero aumenta velocidad (aumenta K). La suma K + U permanece constante.
+                            La bola comienza con energía potencial máxima. A medida que cae, U disminuye y K aumenta, pero la suma siempre es igual.
                         </p>
                     </div>
                 </div>
 
                 <!-- 4. EJERCICIO RESUELTO -->
-                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
                         <h4 class="mb-0 fw-bold">Ejercicio Resuelto</h4>
                     </div>
                     <div class="card-body">
                         <p class="fw-bold">Problema:</p>
                         <p>
-                            Una bola de 2 kg se suelta desde una altura de 5 metros (sin fricción). 
-                            Calcula: a) energía potencial inicial, b) velocidad al llegar al suelo, c) energía cinética final.
+                            Una bola de 2 kg se suelta desde 5 metros (sin fricción). 
+                            Calcula: a) energía potencial inicial, b) velocidad al suelo, c) energía cinética final.
                         </p>
 
-                        <p class="fw-bold mt-3">a) Energía potencial inicial (en h = 5 m):</p>
-                        <div class="bg-light p-2 rounded mb-2">
-                            $$U_1 = mgh = 2 \times 9.8 \times 5 = 98 \text{ J}$$
-                            $$K_1 = 0 \text{ (porque v = 0 al inicio)}$$
+                        <p class="fw-bold mt-3">a) Energía potencial inicial:</p>
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$U_1 = mgh = 2 \times 9.8 \times 5 = 98 \text{ J}$$
+                            </div>
                         </div>
 
                         <p class="fw-bold mt-3">b) Velocidad al llegar al suelo:</p>
-                        <p>Usando conservación de energía:</p>
-                        <div class="bg-light p-2 rounded mb-2">
-                            $$E_1 = E_2$$
-                            $$K_1 + U_1 = K_2 + U_2$$
-                            $$0 + 98 = \frac{1}{2}(2)v^2 + 0$$
-                            $$98 = v^2$$
-                            $$v = \sqrt{98} \approx 9.9 \text{ m/s}$$
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$K_1 + U_1 = K_2 + U_2 \Rightarrow 0 + 98 = \frac{1}{2}(2)v^2 + 0$$
+                                $$v = \sqrt{98} \approx 9.9 \text{ m/s}$$
+                            </div>
                         </div>
 
                         <p class="fw-bold mt-3">c) Energía cinética final:</p>
-                        <div class="bg-light p-2 rounded">
-                            $$K_2 = \frac{1}{2}mv^2 = \frac{1}{2}(2)(9.9)^2 = 98 \text{ J}$$
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$K_2 = \frac{1}{2}(2)(9.9)^2 = 98 \text{ J}$$
+                            </div>
                         </div>
-                        <p class="text-muted">
-                            <strong>Verificación:</strong> K₂ = 98 J = U₁. La energía potencial inicial se convirtió completamente en cinética.
-                        </p>
                     </div>
                 </div>
 
                 <!-- 5. APLICACIÓN EN INGENIERÍA -->
-                <div class="card my-5 border-4" style="border-color: #1e3a5f !important;">
+                <div class="card my-5">
                     <div class="card-header bg-light">
                         <h4 class="mb-0 fw-bold">Conexión con Ingeniería de Software</h4>
                     </div>
                     <div class="card-body">
                         <p>
-                            <strong>Motores de física en videojuegos:</strong> Todos los motores (Unity, Unreal, Godot) usan conservación de energía 
-                            para calcular movimientos realistas sin fricción o con fricción controlada.
+                            <strong>Motores de física:</strong> Todos los motores usan conservación de energía para cálculos realistas.
                         </p>
                         <p>
-                            <strong>Simulaciones:</strong> Sistemas que requieren cálculos eficientes (drones, satélites) 
-                            usan conservación de energía para predecir trayectorias.
+                            <strong>Simulaciones:</strong> Sistemas que requieren cálculos eficientes usan esta ley para predecir trayectorias.
                         </p>
                         <p class="text-muted mb-0">
-                            <strong>Optimización:</strong> La conservación de energía permite detectar errores en simulaciones 
-                            (si E_total cambia sin motivo, hay un bug).
+                            <strong>Optimización:</strong> Detecta errores si E_total cambia sin motivo.
                         </p>
                     </div>
                 </div>
@@ -428,6 +478,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+
+    <script src="../js/semana4.js"></script>
 </body>
 
 </html>
