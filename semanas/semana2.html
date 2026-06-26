@@ -10,6 +10,88 @@
     <link rel="stylesheet" href="../css/styles.css" />
     <!-- MathJax para fórmulas -->
     <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <style>
+        .nav-tabs .nav-link {
+            touch-action: manipulation;
+            cursor: pointer;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .formula-container {
+            overflow-x: auto;
+            -webkit-overflow-scrolling: touch;
+            overflow-y: hidden;
+            margin: 1rem 0;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 0.375rem;
+        }
+
+        .formula-content {
+            min-width: max-content;
+            white-space: nowrap;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        mjx-container {
+            margin: 0 !important;
+        }
+
+        canvas {
+            border: 2px solid #0D1B2A;
+            border-radius: 8px;
+            background-color: #f8f9fa;
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            margin: 1rem auto;
+            display: block;
+        }
+
+        .control-container {
+            margin-top: 1rem;
+            padding: 1rem;
+            background-color: #f8f9fa;
+            border-radius: 8px;
+        }
+
+        .control-container input[type="range"] {
+            width: 100%;
+        }
+
+        .control-value {
+            text-align: center;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-top: 0.5rem;
+        }
+
+        @media (max-width: 768px) {
+            .formula-container {
+                padding: 0.75rem;
+            }
+            .nav-tabs .nav-link {
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .nav-tabs .nav-link {
+                font-size: 0.85rem;
+                min-height: 44px;
+                padding: 0.5rem;
+            }
+            .formula-container {
+                padding: 0.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -27,7 +109,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="../index.html">Inicio</a>
                     </li>
-
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false">
@@ -102,77 +183,49 @@
                     </div>
                     <div class="card-body">
                         <p class="fw-bold">Vector de posición:</p>
-                        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                            <div class="bg-light p-3 rounded mb-3">
+                        <div class="formula-container">
+                            <div class="formula-content">
                                 $$\vec{r}(t) = x(t)\hat{i} + y(t)\hat{j} + z(t)\hat{k}$$
                             </div>
                         </div>
 
                         <p class="fw-bold">Vector de velocidad (derivada de la posición):</p>
-                        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                            <div class="bg-light p-3 rounded mb-3">
+                        <div class="formula-container">
+                            <div class="formula-content">
                                 $$\vec{v}(t) = \frac{d\vec{r}}{dt} = v_x\hat{i} + v_y\hat{j} + v_z\hat{k}$$
                             </div>
                         </div>
 
                         <p class="fw-bold">Vector de aceleración (derivada de la velocidad):</p>
-                        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                            <div class="bg-light p-3 rounded mb-3">
+                        <div class="formula-container">
+                            <div class="formula-content">
                                 $$\vec{a}(t) = \frac{d\vec{v}}{dt} = a_x\hat{i} + a_y\hat{j} + a_z\hat{k}$$
                             </div>
                         </div>
 
                         <p class="fw-bold">Magnitud de la velocidad:</p>
-                        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                            <div class="bg-light p-3 rounded">
+                        <div class="formula-container">
+                            <div class="formula-content">
                                 $$|\vec{v}| = \sqrt{v_x^2 + v_y^2 + v_z^2}$$
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3. DIAGRAMA -->
+                <!-- 3. SIMULACIÓN INTERACTIVA -->
                 <div class="card my-5">
                     <div class="card-header bg-light">
-                        <h4 class="mb-0 fw-bold">Sistema de Coordenadas 3D</h4>
+                        <h4 class="mb-0 fw-bold">Simulación Interactiva - Proyectil en 3D</h4>
                     </div>
                     <div class="card-body text-center">
-                        <div style="background: #f0f4f8; padding: 2rem; border-radius: 8px;">
-                            <svg width="100%" height="auto" viewBox="0 0 300 300" style="max-width: 400px; margin: 0 auto;" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Ejes -->
-                                <line x1="150" y1="150" x2="250" y2="150" stroke="#e74c3c" stroke-width="2" marker-end="url(#arrowred)"/>
-                                <line x1="150" y1="150" x2="150" y2="50" stroke="#3498db" stroke-width="2" marker-end="url(#arrowblue)"/>
-                                <line x1="150" y1="150" x2="80" y2="220" stroke="#2ecc71" stroke-width="2" marker-end="url(#arrowgreen)"/>
-                                
-                                <!-- Etiquetas de ejes -->
-                                <text x="260" y="160" font-size="16" font-weight="bold" fill="#e74c3c">X</text>
-                                <text x="140" y="40" font-size="16" font-weight="bold" fill="#3498db">Z</text>
-                                <text x="50" y="240" font-size="16" font-weight="bold" fill="#2ecc71">Y</text>
-                                
-                                <!-- Punto de origen -->
-                                <circle cx="150" cy="150" r="3" fill="#000"/>
-                                <text x="140" y="170" font-size="12" fill="#000">O</text>
-                                
-                                <!-- Vector de posición -->
-                                <line x1="150" y1="150" x2="200" y2="100" stroke="#9b59b6" stroke-width="2.5" stroke-dasharray="5,5"/>
-                                <text x="210" y="95" font-size="14" font-weight="bold" fill="#9b59b6">r(t)</text>
-                                
-                                <!-- Marcadores de SVG -->
-                                <defs>
-                                    <marker id="arrowred" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
-                                        <polygon points="0,0 10,5 0,10" fill="#e74c3c"/>
-                                    </marker>
-                                    <marker id="arrowblue" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
-                                        <polygon points="0,0 10,5 0,10" fill="#3498db"/>
-                                    </marker>
-                                    <marker id="arrowgreen" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
-                                        <polygon points="0,0 10,5 0,10" fill="#2ecc71"/>
-                                    </marker>
-                                </defs>
-                            </svg>
+                        <canvas id="canvas3D"></canvas>
+                        <div class="control-container">
+                            <p class="fw-bold mb-2">Ángulo de Lanzamiento (grados)</p>
+                            <input type="range" id="angulo3D" min="15" max="75" step="5" value="45">
+                            <p class="control-value">θ = 45°</p>
                         </div>
                         <p class="text-muted mt-3 mb-0">
-                            El vector de posición <strong>r(t)</strong> apunta desde el origen O hasta la ubicación del objeto.
+                            Observa cómo cambia la trayectoria del proyectil al variar el ángulo de lanzamiento. La línea roja muestra la trayectoria en 3D.
                         </p>
                     </div>
                 </div>
@@ -188,29 +241,22 @@
                             Un proyectil se lanza desde el origen con velocidad inicial de 20 m/s en 45° respecto al plano horizontal. 
                             Su movimiento se describe con:
                         </p>
-                        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                            <div class="bg-light p-3 rounded mb-3">
-                                $$x(t) = 14.14t \text{ m}$$
-                                $$y(t) = 14.14t \text{ m}$$
-                                $$z(t) = 14.14t - 5t^2 \text{ m}$$
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$x(t) = 14.14t, \quad y(t) = 14.14t, \quad z(t) = 14.14t - 5t^2$$
                             </div>
                         </div>
-                        <p class="fw-bold mt-3">a) Encuentra la posición en t = 2 segundos</p>
-                        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                            <div class="bg-light p-2 rounded mb-2">
-                                $$x(2) = 14.14 \times 2 = 28.28 \text{ m}$$
-                                $$y(2) = 14.14 \times 2 = 28.28 \text{ m}$$
-                                $$z(2) = 14.14(2) - 5(2)^2 = 28.28 - 20 = 8.28 \text{ m}$$
+                        <p class="fw-bold mt-3">a) Posición en t = 2 segundos</p>
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$x(2) = 28.28 \text{ m}, \quad y(2) = 28.28 \text{ m}, \quad z(2) = 8.28 \text{ m}$$
                             </div>
                         </div>
-                        <p class="text-muted">
-                            <strong>Respuesta:</strong> La posición es <strong>(28.28, 28.28, 8.28) m</strong>
-                        </p>
 
-                        <p class="fw-bold mt-3">b) Calcula la magnitud del vector de posición</p>
-                        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                            <div class="bg-light p-2 rounded mb-2">
-                                $$|\vec{r}(2)| = \sqrt{28.28^2 + 28.28^2 + 8.28^2} = \sqrt{800 + 800 + 68.56} = \sqrt{1668.56} \approx 40.85 \text{ m}$$
+                        <p class="fw-bold mt-3">b) Magnitud del vector de posición</p>
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$|\vec{r}(2)| = \sqrt{28.28^2 + 28.28^2 + 8.28^2} \approx 40.85 \text{ m}$$
                             </div>
                         </div>
                     </div>
@@ -223,16 +269,13 @@
                     </div>
                     <div class="card-body">
                         <p>
-                            <strong>Videojuegos 3D:</strong> En motores como Unity o Unreal Engine, cada objeto (personaje, enemy, proyectil) 
-                            tiene un vector de posición en 3D. El sistema de física del juego actualiza continuamente estas coordenadas.
+                            <strong>Videojuegos 3D:</strong> En motores como Unity o Unreal Engine, cada objeto tiene un vector de posición en 3D.
                         </p>
                         <p>
-                            <strong>Gráficos computacionales:</strong> Las cámaras virtuales se posicionan usando coordenadas 3D para 
-                            renderizar la escena desde diferentes ángulos.
+                            <strong>Gráficos computacionales:</strong> Las cámaras virtuales se posicionan usando coordenadas 3D.
                         </p>
                         <p class="text-muted mb-0">
-                            <strong>Simulaciones:</strong> Drones, robots y sistemas de realidad aumentada dependen del cálculo 
-                            de movimiento en 3 dimensiones para navegar el espacio.
+                            <strong>Simulaciones:</strong> Drones, robots y sistemas de realidad aumentada dependen del movimiento en 3D.
                         </p>
                     </div>
                 </div>
@@ -253,8 +296,8 @@
                             en una trayectoria circular con <strong>rapidez constante</strong>.
                         </p>
                         <p>
-                            Aunque la rapidez (magnitud de la velocidad) es constante, la <strong>velocidad está cambiando continuamente</strong> 
-                            porque siempre apunta en la dirección tangente al círculo, que va girando.
+                            Aunque la rapidez es constante, la <strong>velocidad está cambiando continuamente</strong> 
+                            porque siempre apunta en la dirección tangente al círculo.
                         </p>
                         <p class="text-muted mb-0">
                             <strong>Ejemplos:</strong> Un satélite orbitando un planeta, un auto en una curva a velocidad constante, 
@@ -270,90 +313,61 @@
                     </div>
                     <div class="card-body">
                         <p class="fw-bold">Período (T) - tiempo para dar una vuelta:</p>
-                        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                            <div class="bg-light p-3 rounded mb-3">
-                                $$T = \frac{1}{f} \text{ (en segundos)}$$
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$T = \frac{1}{f}$$
                             </div>
                         </div>
 
                         <p class="fw-bold">Frecuencia (f) - vueltas por unidad de tiempo:</p>
-                        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                            <div class="bg-light p-3 rounded mb-3">
-                                $$f = \frac{1}{T} \text{ (en Hz o vueltas/s)}$$
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$f = \frac{1}{T}$$
                             </div>
                         </div>
 
                         <p class="fw-bold">Velocidad angular (ω):</p>
-                        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                            <div class="bg-light p-3 rounded mb-3">
-                                $$\omega = \frac{2\pi}{T} = 2\pi f \text{ (en rad/s)}$$
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$\omega = \frac{2\pi}{T} = 2\pi f$$
                             </div>
                         </div>
 
-                        <p class="fw-bold">Velocidad tangencial (v) - rapidez lineal:</p>
-                        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                            <div class="bg-light p-3 rounded mb-3">
+                        <p class="fw-bold">Velocidad tangencial (v):</p>
+                        <div class="formula-container">
+                            <div class="formula-content">
                                 $$v = \omega r = \frac{2\pi r}{T}$$
-                                <small class="d-block text-muted mt-2">donde r es el radio de la trayectoria</small>
                             </div>
                         </div>
 
-                        <p class="fw-bold">Aceleración centrípeta (siempre hacia el centro):</p>
-                        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                            <div class="bg-light p-3 rounded">
+                        <p class="fw-bold">Aceleración centrípeta:</p>
+                        <div class="formula-container">
+                            <div class="formula-content">
                                 $$a_c = \frac{v^2}{r} = \omega^2 r$$
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- 3. DIAGRAMA -->
+                <!-- 3. SIMULACIÓN INTERACTIVA -->
                 <div class="card my-5">
                     <div class="card-header bg-light">
-                        <h4 class="mb-0 fw-bold">Diagrama de MCU</h4>
+                        <h4 class="mb-0 fw-bold">Simulación Interactiva - MCU</h4>
                     </div>
                     <div class="card-body text-center">
-                        <div style="background: #f0f4f8; padding: 2rem; border-radius: 8px;">
-                            <svg width="100%" height="auto" viewBox="0 0 350 350" style="max-width: 400px; margin: 0 auto;" xmlns="http://www.w3.org/2000/svg">
-                                <!-- Círculo de trayectoria -->
-                                <circle cx="175" cy="175" r="100" fill="none" stroke="#3498db" stroke-width="2" stroke-dasharray="5,5"/>
-                                
-                                <!-- Centro -->
-                                <circle cx="175" cy="175" r="3" fill="#2c3e50"/>
-                                
-                                <!-- Objeto en movimiento -->
-                                <circle cx="275" cy="175" r="8" fill="#e74c3c"/>
-                                
-                                <!-- Radio -->
-                                <line x1="175" y1="175" x2="275" y2="175" stroke="#2c3e50" stroke-width="2"/>
-                                <text x="220" y="165" font-size="14" font-weight="bold" fill="#2c3e50">r</text>
-                                
-                                <!-- Velocidad tangencial -->
-                                <line x1="275" y1="175" x2="275" y2="100" stroke="#27ae60" stroke-width="2.5" marker-end="url(#arrowgreen2)"/>
-                                <text x="285" y="130" font-size="14" font-weight="bold" fill="#27ae60">v</text>
-                                
-                                <!-- Aceleración centrípeta -->
-                                <line x1="275" y1="175" x2="225" y2="175" stroke="#e67e22" stroke-width="2.5" marker-end="url(#arroworange)"/>
-                                <text x="235" y="190" font-size="14" font-weight="bold" fill="#e67e22">a<tspan baseline-shift="sub">c</tspan></text>
-                                
-                                <!-- Ángulo angular -->
-                                <path d="M 210 175 A 35 35 0 0 0 175 140" fill="none" stroke="#9b59b6" stroke-width="2" stroke-dasharray="3,3"/>
-                                <text x="200" y="150" font-size="12" fill="#9b59b6">θ</text>
-                                
-                                <!-- Marcadores de SVG -->
-                                <defs>
-                                    <marker id="arrowgreen2" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
-                                        <polygon points="0,0 10,5 0,10" fill="#27ae60"/>
-                                    </marker>
-                                    <marker id="arroworange" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
-                                        <polygon points="0,0 10,5 0,10" fill="#e67e22"/>
-                                    </marker>
-                                </defs>
-                            </svg>
+                        <canvas id="canvasMCU"></canvas>
+                        <div class="control-container">
+                            <p class="fw-bold mb-2">RPM (Revoluciones por Minuto)</p>
+                            <input type="range" id="rpmMCU" min="30" max="180" step="10" value="120">
+                            <p class="control-value">RPM = 120</p>
+                        </div>
+                        <div class="control-container">
+                            <p id="mcuInfo" style="text-align: center; font-size: 0.9rem; color: #555;">
+                                T = 0.50 s | f = 2.00 Hz | ω = 12.57 rad/s
+                            </p>
                         </div>
                         <p class="text-muted mt-3 mb-0">
-                            La <strong>velocidad v</strong> es tangente al círculo. La <strong>aceleración centrípeta a<sub>c</sub></strong> 
-                            siempre apunta hacia el centro.
+                            Ajusta las RPM para ver cómo cambia el período, frecuencia y velocidad angular. La flecha verde muestra la velocidad tangencial.
                         </p>
                     </div>
                 </div>
@@ -366,36 +380,35 @@
                     <div class="card-body">
                         <p class="fw-bold">Problema:</p>
                         <p>
-                            Una rueda de 0.5 m de radio gira a 120 RPM (revoluciones por minuto). 
+                            Una rueda de 0.5 m de radio gira a 120 RPM. 
                             Calcula: a) período, b) velocidad angular, c) velocidad tangencial, d) aceleración centrípeta.
                         </p>
 
                         <p class="fw-bold mt-3">a) Período (T)</p>
-                        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                            <div class="bg-light p-2 rounded mb-2">
-                                $$f = \frac{120 \text{ rev/min}}{60 \text{ s/min}} = 2 \text{ rev/s} = 2 \text{ Hz}$$
-                                $$T = \frac{1}{f} = \frac{1}{2} = 0.5 \text{ s}$$
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$f = \frac{120}{60} = 2 \text{ Hz}, \quad T = \frac{1}{2} = 0.5 \text{ s}$$
                             </div>
                         </div>
 
                         <p class="fw-bold mt-3">b) Velocidad angular (ω)</p>
-                        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                            <div class="bg-light p-2 rounded mb-2">
+                        <div class="formula-container">
+                            <div class="formula-content">
                                 $$\omega = 2\pi f = 2\pi(2) = 4\pi \approx 12.57 \text{ rad/s}$$
                             </div>
                         </div>
 
                         <p class="fw-bold mt-3">c) Velocidad tangencial (v)</p>
-                        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                            <div class="bg-light p-2 rounded mb-2">
+                        <div class="formula-container">
+                            <div class="formula-content">
                                 $$v = \omega r = 12.57 \times 0.5 = 6.28 \text{ m/s}$$
                             </div>
                         </div>
 
                         <p class="fw-bold mt-3">d) Aceleración centrípeta (a<sub>c</sub>)</p>
-                        <div style="overflow-x: auto; -webkit-overflow-scrolling: touch;">
-                            <div class="bg-light p-2 rounded">
-                                $$a_c = \frac{v^2}{r} = \frac{(6.28)^2}{0.5} = \frac{39.44}{0.5} = 78.88 \text{ m/s}^2$$
+                        <div class="formula-container">
+                            <div class="formula-content">
+                                $$a_c = \frac{v^2}{r} = \frac{(6.28)^2}{0.5} = 78.88 \text{ m/s}^2$$
                             </div>
                         </div>
                     </div>
@@ -408,16 +421,13 @@
                     </div>
                     <div class="card-body">
                         <p>
-                            <strong>Videojuegos:</strong> Para hacer que un enemy orbite alrededor del jugador o que una cámara 
-                            gire alrededor de un objeto, usamos MCU para calcular posiciones en forma circular.
+                            <strong>Videojuegos:</strong> Para hacer que un enemy orbite alrededor del jugador o que una cámara gire.
                         </p>
                         <p>
-                            <strong>Animaciones:</strong> Las animaciones circulares (ruedas, ventiladores, planetas orbitando) 
-                            se basan en los cálculos de MCU.
+                            <strong>Animaciones:</strong> Las animaciones circulares se basan en MCU.
                         </p>
                         <p class="text-muted mb-0">
-                            <strong>Simulaciones físicas:</strong> Sistemas planetarios, satélites y drones que orbitan requieren 
-                            entender MCU para calcular trayectorias precisas.
+                            <strong>Simulaciones físicas:</strong> Sistemas planetarios, satélites requieren cálculos de MCU.
                         </p>
                     </div>
                 </div>
@@ -439,6 +449,8 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
         crossorigin="anonymous"></script>
+
+    <script src="../js/semana2.js"></script>
 </body>
 
 </html>
